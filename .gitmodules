@@ -1,0 +1,6 @@
+[submodule "lib/v2-core"]
+	path = lib/v2-core
+	url = https://github.com/Uniswap/v2-core.git
+[submodule "lib/core"]
+	path = lib/core
+	url = https://github.com/Uniswap/v2-core.git

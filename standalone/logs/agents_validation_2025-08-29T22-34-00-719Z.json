@@ -1,0 +1,347 @@
+{
+  "generated_at": "2025-08-29T22:34:00.891Z",
+  "thresholds": {
+    "minEntropy": 0.5,
+    "minBranches": 3
+  },
+  "summary": {
+    "total": 28,
+    "flagged": 23,
+    "kept": 5,
+    "dryRun": false
+  },
+  "flagged": [
+    {
+      "file": "agent_scaffolding_blueprint_50bf46_Agent.ts",
+      "runtime_id": null,
+      "title": "Agent Scaffolding Blueprint 50bf46 Agent",
+      "agent_role": "scaffolder",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "another_node_2c5511_Agent.ts",
+      "runtime_id": null,
+      "title": "Another Node 2c5511 Agent",
+      "agent_role": "generic",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "another_node_7c5c55_Agent.ts",
+      "runtime_id": "another_node_7c5c55",
+      "title": "Another Node",
+      "agent_role": "generic",
+      "entropy_score": 0.366,
+      "branch_count": 3,
+      "concepts": [
+        "coding-advanced"
+      ],
+      "reasons": [
+        "low_entropy(0.366 < 0.5)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "central_concept_078712_Agent.ts",
+      "runtime_id": null,
+      "title": "Central Concept 078712 Agent",
+      "agent_role": "generic",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "central_concept_b86906_Agent.ts",
+      "runtime_id": "central_concept_b86906",
+      "title": "Central Concept",
+      "agent_role": "generic",
+      "entropy_score": 0.017,
+      "branch_count": 5,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0.017 < 0.5)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "code_documentation_generation_protocol_368bc5_Agent.ts",
+      "runtime_id": null,
+      "title": "Code Documentation Generation Protocol 368bc5 Agent",
+      "agent_role": "docgen",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "diagnostics_health_checks_7f2479_Agent.ts",
+      "runtime_id": null,
+      "title": "Diagnostics Health Checks 7f2479 Agent",
+      "agent_role": "validator",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "elite_runtime_coding_agent_A1.ts",
+      "runtime_id": null,
+      "title": "Elite Runtime Coding Agent A1",
+      "agent_role": "generic",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "error_handling_saga_recovery_8401b7_Agent.ts",
+      "runtime_id": null,
+      "title": "Error Handling Saga Recovery 8401b7 Agent",
+      "agent_role": "generic",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "evolving_autoscaler_tuning_020f1c_Agent.ts",
+      "runtime_id": null,
+      "title": "Evolving Autoscaler Tuning 020f1c Agent",
+      "agent_role": "generic",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "integration_api_contract_validation_50c652_Agent.ts",
+      "runtime_id": null,
+      "title": "Integration Api Contract Validation 50c652 Agent",
+      "agent_role": "validator",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "landing_page_generation_workflow_5d6af9_Agent.ts",
+      "runtime_id": null,
+      "title": "Landing Page Generation Workflow 5d6af9 Agent",
+      "agent_role": "generator",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_2eb6ad_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_2eb6ad",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "agent_role": "parser",
+      "entropy_score": 0.321,
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "reasons": [
+        "low_entropy(0.321 < 0.5)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_4ab144_Agent.ts",
+      "runtime_id": null,
+      "title": "Mindmap Intent Parsing Enhancement 4ab144 Agent",
+      "agent_role": "parser",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_774a08_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_774a08",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "agent_role": "parser",
+      "entropy_score": 0.321,
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "reasons": [
+        "low_entropy(0.321 < 0.5)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_9719a2_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_9719a2",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "agent_role": "parser",
+      "entropy_score": 0.321,
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "reasons": [
+        "low_entropy(0.321 < 0.5)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "my_awesome_mindmap_02d637_Agent.ts",
+      "runtime_id": null,
+      "title": "My Awesome Mindmap 02d637 Agent",
+      "agent_role": "parser",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "my_awesome_mindmap_082e2b_Agent.ts",
+      "runtime_id": "my_awesome_mindmap_082e2b",
+      "title": "My Awesome Mindmap",
+      "agent_role": "parser",
+      "entropy_score": 0.358,
+      "branch_count": 3,
+      "concepts": [
+        "mindmap"
+      ],
+      "reasons": [
+        "low_entropy(0.358 < 0.5)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "nft_minting_transaction_flow_7ae0e9_Agent.ts",
+      "runtime_id": null,
+      "title": "Nft Minting Transaction Flow 7ae0e9 Agent",
+      "agent_role": "minter",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "optimization_hotspot_optimization_19038f_Agent.ts",
+      "runtime_id": null,
+      "title": "Optimization Hotspot Optimization 19038f Agent",
+      "agent_role": "generic",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "smart_contract_deployment_pipeline_6b5413_Agent.ts",
+      "runtime_id": null,
+      "title": "Smart Contract Deployment Pipeline 6b5413 Agent",
+      "agent_role": "deployer",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "troubleshooting_latency_spike_9c1ecf_Agent.ts",
+      "runtime_id": null,
+      "title": "Troubleshooting Latency Spike 9c1ecf Agent",
+      "agent_role": "generic",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "troubleshooting_service_outage_bad096_Agent.ts",
+      "runtime_id": null,
+      "title": "Troubleshooting Service Outage Bad096 Agent",
+      "agent_role": "generic",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    }
+  ]
+}

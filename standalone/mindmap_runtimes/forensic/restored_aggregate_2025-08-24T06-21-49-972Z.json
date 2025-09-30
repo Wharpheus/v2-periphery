@@ -1,0 +1,162 @@
+[
+  {
+    "runtime_id": "nft_minting_transaction_flow_825508",
+    "title": "NFT Minting Transaction Flow",
+    "source": "1000004642.json",
+    "branches": [
+      {
+        "id": "5e73b8_branch_1",
+        "content": "Connect to NFT contract with signer credentials"
+      },
+      {
+        "id": "5e73b8_branch_2",
+        "content": "Invoke mint function with recipient and token URI"
+      },
+      {
+        "id": "5e73b8_branch_3",
+        "content": "Await transaction confirmation and emit receipt"
+      },
+      {
+        "id": "5e73b8_branch_4",
+        "content": "Package txHash, recipient, and URI in response payload"
+      }
+    ],
+    "concepts": [
+      "nft",
+      "mint",
+      "transaction"
+    ],
+    "relationships": [
+      "depends_on: SmartPayloadBuilder",
+      "triggers: MintNFTAgent"
+    ],
+    "hierarchy": {
+      "level": "module",
+      "priority": "high"
+    },
+    "agent": "ForensicRefactor",
+    "status": "Refactored",
+    "notes": "Structure restored. Original file quarantined."
+  },
+  {
+    "runtime_id": "mindmap_intent_parsing_enhancement_774a08",
+    "title": "Mindmap Intent Parsing Enhancement",
+    "source": "1000004643.json",
+    "branches": [
+      {
+        "id": "2f0560_branch_1",
+        "content": "Detect structure type (hierarchical, workflow, relationships)"
+      },
+      {
+        "id": "2f0560_branch_2",
+        "content": "Extract domain concepts from intent string"
+      },
+      {
+        "id": "2f0560_branch_3",
+        "content": "Generate payload with contextual depth and scope"
+      },
+      {
+        "id": "2f0560_branch_4",
+        "content": "Attach troubleshooting hooks and error fingerprints"
+      }
+    ],
+    "concepts": [
+      "mindmap",
+      "intent parsing",
+      "payload synthesis"
+    ],
+    "relationships": [
+      "depends_on: MindMapProcessor",
+      "depends_on: SmartPayloadBuilder"
+    ],
+    "hierarchy": {
+      "level": "module",
+      "priority": "low"
+    },
+    "agent": "ForensicRefactor",
+    "status": "Refactored",
+    "notes": "Structure restored. Original file quarantined."
+  },
+  {
+    "runtime_id": "code_documentation_generation_protocol_6b5b5f",
+    "title": "Code Documentation Generation Protocol",
+    "source": "sample.json",
+    "branches": [
+      {
+        "id": "c487a4_branch_1",
+        "content": "Infer code intent and behavior from lexical signals"
+      },
+      {
+        "id": "c487a4_branch_2",
+        "content": "Assemble markdown with snippet, description, and usage"
+      },
+      {
+        "id": "c487a4_branch_3",
+        "content": "Store artifact in public/ and append to runtime log"
+      },
+      {
+        "id": "c487a4_branch_4",
+        "content": "Surface preview path for quick review"
+      },
+      {
+        "id": "c487a4_branch_5",
+        "content": "Annotate with runtime_id and scroll reference"
+      }
+    ],
+    "concepts": [
+      "documentation",
+      "markdown",
+      "code intent"
+    ],
+    "relationships": [
+      "depends_on: SmartPayloadBuilder",
+      "triggers: CodeDocumentationAgent"
+    ],
+    "hierarchy": {
+      "level": "module",
+      "priority": "high"
+    },
+    "agent": "ForensicRefactor",
+    "status": "Refactored",
+    "notes": "Structure restored. Original file quarantined."
+  },
+  {
+    "runtime_id": "mindmap_intent_parsing_enhancement_774a08",
+    "title": "Mindmap Intent Parsing Enhancement",
+    "source": "sample.json",
+    "branches": [
+      {
+        "id": "2f0560_branch_1",
+        "content": "Detect structure type (hierarchical, workflow, relationships)"
+      },
+      {
+        "id": "2f0560_branch_2",
+        "content": "Extract domain concepts from intent string"
+      },
+      {
+        "id": "2f0560_branch_3",
+        "content": "Generate payload with contextual depth and scope"
+      },
+      {
+        "id": "2f0560_branch_4",
+        "content": "Attach troubleshooting hooks and error fingerprints"
+      }
+    ],
+    "concepts": [
+      "mindmap",
+      "intent parsing",
+      "payload synthesis"
+    ],
+    "relationships": [
+      "depends_on: MindMapProcessor",
+      "depends_on: SmartPayloadBuilder"
+    ],
+    "hierarchy": {
+      "level": "module",
+      "priority": "low"
+    },
+    "agent": "ForensicRefactor",
+    "status": "Refactored",
+    "notes": "Structure restored. Original file quarantined."
+  }
+]

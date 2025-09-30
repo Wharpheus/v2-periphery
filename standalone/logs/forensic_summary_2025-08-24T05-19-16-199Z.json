@@ -1,0 +1,12 @@
+{
+  "scanned": 2,
+  "flagged": 2,
+  "restored": 2,
+  "outputs": [
+    "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\mindmap_runtimes\\forensic\\1000004642.restored.json",
+    "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\mindmap_runtimes\\forensic\\1000004643.restored.json"
+  ],
+  "aggregate": "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\mindmap_runtimes\\forensic\\restored_aggregate_2025-08-24T05-19-16-199Z.json",
+  "sabotageLog": "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\logs\\forensic_sabotage_log_2025-08-24T05-19-16-199Z.json",
+  "timestamp": "2025-08-24T05-19-16-199Z"
+}

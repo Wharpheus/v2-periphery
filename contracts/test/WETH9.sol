@@ -13,56 +13,66 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity =0.6.6;
+pragma solidity ^0.8.28;
 
+/// @title WETH9
+/// @author Steven Dauplaise
+/// @notice See contract details below
 contract WETH9 {
-    string public name     = "Wrapped Ether";
-    string public symbol   = "WETH";
-    uint8  public decimals = 18;
+    string public name = "Wrapped Ether";
+    string public symbol = "WETH";
+    uint8 public decimals = 18;
 
-    event  Approval(address indexed src, address indexed guy, uint wad);
-    event  Transfer(address indexed src, address indexed dst, uint wad);
-    event  Deposit(address indexed dst, uint wad);
-    event  Withdrawal(address indexed src, uint wad);
+    /// @notice See event details
+event Approval(address indexed src, address indexed guy, uint256 wad);
+    event Transfer(address indexed src, address indexed dst, uint256 wad);
+    /// @notice See event details
+event Deposit(address indexed dst, uint256 wad);
+    event Withdrawal(address indexed src, uint256 wad);
 
-    mapping (address => uint)                       public  balanceOf;
-    mapping (address => mapping (address => uint))  public  allowance;
+    mapping(address => uint256) /// @notice See variable details
+public balanceOf;
+    mapping(address => mapping(address => uint256)) public allowance;
 
     // function() public payable {
     //     deposit();
     // }
-    function deposit() public payable {
+    /// @notice See function details
+function deposit() public payable {
         balanceOf[msg.sender] += msg.value;
         emit Deposit(msg.sender, msg.value);
     }
-    function withdraw(uint wad) public {
+
+    /// @notice See function details
+function withdraw(uint256 wad) public {
         require(balanceOf[msg.sender] >= wad, "");
         balanceOf[msg.sender] -= wad;
-        msg.sender.transfer(wad);
+  payable(msg.sender).transfer(wad);
         emit Withdrawal(msg.sender, wad);
     }
 
-    function totalSupply() public view returns (uint) {
+    /// @notice See function details
+function totalSupply() public view returns (uint256) {
         return address(this).balance;
     }
 
-    function approve(address guy, uint wad) public returns (bool) {
+    /// @notice See function details
+function approve(address guy, uint256 wad) public returns (bool) {
         allowance[msg.sender][guy] = wad;
         emit Approval(msg.sender, guy, wad);
         return true;
     }
 
-    function transfer(address dst, uint wad) public returns (bool) {
+    /// @notice See function details
+function transfer(address dst, uint256 wad) public returns (bool) {
         return transferFrom(msg.sender, dst, wad);
     }
 
-    function transferFrom(address src, address dst, uint wad)
-        public
-        returns (bool)
-    {
+    /// @notice See function details
+function transferFrom(address src, address dst, uint256 wad) public returns (bool) {
         require(balanceOf[src] >= wad, "");
 
-        if (src != msg.sender && allowance[src][msg.sender] != uint(-1)) {
+  if (src != msg.sender && allowance[src][msg.sender] != type(uint256).max) {
             require(allowance[src][msg.sender] >= wad, "");
             allowance[src][msg.sender] -= wad;
         }
@@ -75,7 +85,6 @@ contract WETH9 {
         return true;
     }
 }
-
 
 /*
                     GNU GENERAL PUBLIC LICENSE
@@ -106,7 +115,8 @@ them if you wish), that you receive source code or can get it if you
 want it, that you can change the software or use pieces of it in new
 free programs, and that you know you can do these things.
 
-  To protect your rights, we need to prevent others from denying you
+  To protect your rights, we need to pr/// @notice See event details
+event others from denying you
 these rights or asking you to surrender the rights.  Therefore, you have
 certain responsibilities if you distribute copies of the software, or if
 you modify it: responsibilities to respect the freedom of others.
@@ -142,7 +152,8 @@ of the GPL, as needed to protect the freedom of users.
 States should not allow patents to restrict development and use of
 software on general-purpose computers, but in those that do, we wish to
 avoid the special danger that patents applied to a free program could
-make it effectively proprietary.  To prevent this, the GPL assures that
+make it effectively proprietary.  To pr/// @notice See event details
+event this, the GPL assures that
 patents cannot be used to render the program non-free.
 
   The precise terms and conditions for copying, distribution and

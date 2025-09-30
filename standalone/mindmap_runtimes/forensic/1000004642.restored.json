@@ -1,0 +1,41 @@
+[
+  {
+    "runtime_id": "mindmap_intent_parsing_enhancement_9719a2",
+    "title": "Mindmap Intent Parsing Enhancement",
+    "source": "1000004642.json",
+    "branches": [
+      {
+        "id": "f4a231_branch_1",
+        "content": "Detect structure type (hierarchical, workflow, relationships)"
+      },
+      {
+        "id": "f4a231_branch_2",
+        "content": "Extract domain concepts from intent string"
+      },
+      {
+        "id": "f4a231_branch_3",
+        "content": "Generate payload with contextual depth and scope"
+      },
+      {
+        "id": "f4a231_branch_4",
+        "content": "Attach troubleshooting hooks and error fingerprints"
+      }
+    ],
+    "concepts": [
+      "mindmap",
+      "intent parsing",
+      "payload synthesis"
+    ],
+    "relationships": [
+      "depends_on: MindMapProcessor",
+      "depends_on: SmartPayloadBuilder"
+    ],
+    "hierarchy": {
+      "level": "module",
+      "priority": "low"
+    },
+    "agent": "ForensicRefactor",
+    "status": "Refactored",
+    "notes": "Structure restored. Original file quarantined."
+  }
+]

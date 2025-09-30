@@ -1,0 +1,37 @@
+[
+  {
+    "runtime_id": "my_awesome_mindmap_273532",
+    "title": "My Awesome Mindmap",
+    "source": "sample.txt",
+    "timestamp": "2025-08-24T06:14:15.857Z",
+    "branches": [
+      {
+        "id": "my_awesome_mindmap_273532_branch_1",
+        "content": "Branch 1"
+      },
+      {
+        "id": "my_awesome_mindmap_273532_branch_2",
+        "content": "Branch 2"
+      }
+    ],
+    "concepts": [
+      "mindmap"
+    ]
+  },
+  {
+    "runtime_id": "another_node_b78a9e",
+    "title": "Another Node",
+    "source": "sample.txt",
+    "timestamp": "2025-08-24T06:14:15.858Z",
+    "branches": [
+      {
+        "id": "another_node_b78a9e_branch_1",
+        "content": "Sub-branch A"
+      },
+      {
+        "id": "another_node_b78a9e_branch_2",
+        "content": "Sub-branch B"
+      }
+    ]
+  }
+]

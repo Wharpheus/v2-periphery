@@ -1,0 +1,169 @@
+{
+  "generated_at": "2025-08-29T22:25:22.686Z",
+  "args": {
+    "roles": [
+      "deployer",
+      "minter",
+      "validator",
+      "generator",
+      "docgen",
+      "parser",
+      "scaffolder",
+      "meta-agent"
+    ],
+    "minEntropy": 0.6,
+    "minBranches": 3,
+    "minGrade": null,
+    "dryRun": false
+  },
+  "counts": {
+    "total": 28,
+    "selected": 4
+  },
+  "selected": [
+    {
+      "file": "agent_scaffolding_blueprint_3856f6_Agent.ts",
+      "runtime_id": "agent_scaffolding_blueprint_3856f6",
+      "title": "Agent Scaffolding Blueprint",
+      "timestamp": "2025-08-29T22-19-14-232Z",
+      "source": "sample.json",
+      "branch_count": 5,
+      "concepts": [
+        "agent scaffolding",
+        "executor pattern",
+        "payload contract"
+      ],
+      "entropy_score": 0.624,
+      "signal_grade": "Medium",
+      "agent_role": "scaffolder",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/sample.restored.json",
+        "mindmap": "sample.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "landing_page_generation_workflow_24aea5_Agent.ts",
+      "runtime_id": "landing_page_generation_workflow_24aea5",
+      "title": "Landing Page Generation Workflow",
+      "timestamp": "2025-08-29T22-19-14-232Z",
+      "source": "1000004643.json",
+      "branch_count": 4,
+      "concepts": [
+        "html generation",
+        "metadata",
+        "preview"
+      ],
+      "entropy_score": 0.612,
+      "signal_grade": "Medium",
+      "agent_role": "generator",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-29T22-19-13-565Z.json",
+        "mindmap": "1000004643.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "nft_minting_transaction_flow_60471c_Agent.ts",
+      "runtime_id": "nft_minting_transaction_flow_60471c",
+      "title": "NFT Minting Transaction Flow",
+      "timestamp": "2025-08-29T22-19-14-232Z",
+      "source": "1000004643.json",
+      "branch_count": 4,
+      "concepts": [
+        "nft",
+        "mint",
+        "transaction"
+      ],
+      "entropy_score": 0.619,
+      "signal_grade": "Medium",
+      "agent_role": "minter",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-29T22-16-15-746Z.json",
+        "mindmap": "1000004643.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "nft_minting_transaction_flow_825508_Agent.ts",
+      "runtime_id": "nft_minting_transaction_flow_825508",
+      "title": "NFT Minting Transaction Flow",
+      "timestamp": "2025-08-29T22-19-14-232Z",
+      "source": "1000004642.json",
+      "branch_count": 4,
+      "concepts": [
+        "nft",
+        "mint",
+        "transaction"
+      ],
+      "entropy_score": 0.619,
+      "signal_grade": "Medium",
+      "agent_role": "minter",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-24T06-21-49-972Z.json",
+        "mindmap": "1000004642.json",
+        "forensic_status": "refactored"
+      }
+    }
+  ],
+  "staged": [
+    {
+      "file": "agent_scaffolding_blueprint_3856f6_Agent.ts",
+      "action": "staged",
+      "role": "scaffolder",
+      "runtime_id": "agent_scaffolding_blueprint_3856f6",
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/sample.restored.json",
+        "mindmap": "sample.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "landing_page_generation_workflow_24aea5_Agent.ts",
+      "action": "staged",
+      "role": "generator",
+      "runtime_id": "landing_page_generation_workflow_24aea5",
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-29T22-19-13-565Z.json",
+        "mindmap": "1000004643.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "nft_minting_transaction_flow_60471c_Agent.ts",
+      "action": "staged",
+      "role": "minter",
+      "runtime_id": "nft_minting_transaction_flow_60471c",
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-29T22-16-15-746Z.json",
+        "mindmap": "1000004643.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "nft_minting_transaction_flow_825508_Agent.ts",
+      "action": "staged",
+      "role": "minter",
+      "runtime_id": "nft_minting_transaction_flow_825508",
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-24T06-21-49-972Z.json",
+        "mindmap": "1000004642.json",
+        "forensic_status": "refactored"
+      }
+    }
+  ],
+  "stagingDir": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/deploy/staging",
+  "notes": "Staging complete. Next: integrate with Wharpheus DI push pipeline."
+}

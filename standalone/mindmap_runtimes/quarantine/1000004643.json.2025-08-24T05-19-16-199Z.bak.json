@@ -1,0 +1,40 @@
+[
+  {
+    "runtime_id": "central_concept",
+    "title": "Central Concept",
+    "branches": [
+      {
+        "id": "central_concept_branch_1",
+        "content": "Aspect 1"
+      },
+      {
+        "id": "central_concept_branch_2",
+        "content": "Aspect 2"
+      }
+    ]
+  },
+  {
+    "runtime_id": "aspect_1",
+    "title": "Aspect 1",
+    "branches": [
+      {
+        "id": "aspect_1_branch_1",
+        "content": "Feature A"
+      },
+      {
+        "id": "aspect_1_branch_2",
+        "content": "Feature B"
+      }
+    ]
+  },
+  {
+    "runtime_id": "aspect_2",
+    "title": "Aspect 2",
+    "branches": [
+      {
+        "id": "aspect_2_branch_1",
+        "content": "Feature C"
+      }
+    ]
+  }
+]

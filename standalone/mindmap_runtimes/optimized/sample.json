@@ -1,0 +1,48 @@
+[
+  {
+    "runtime_id": "my_awesome_mindmap_082e2b",
+    "title": "My Awesome Mindmap",
+    "source": "sample.txt",
+    "timestamp": "2025-08-29T22:19:12.790Z",
+    "branches": [
+      {
+        "id": "my_awesome_mindmap_082e2b_branch_1",
+        "content": "Branch 1"
+      },
+      {
+        "id": "my_awesome_mindmap_082e2b_branch_2",
+        "content": "Branch 2"
+      },
+      {
+        "id": "my_awesome_mindmap_082e2b_branch_3",
+        "content": "Detect structure type (hierarchical, workflow, relationships)"
+      }
+    ],
+    "concepts": [
+      "mindmap"
+    ]
+  },
+  {
+    "runtime_id": "another_node_7c5c55",
+    "title": "Another Node",
+    "source": "sample.txt",
+    "timestamp": "2025-08-29T22:19:12.791Z",
+    "branches": [
+      {
+        "id": "another_node_7c5c55_branch_1",
+        "content": "Sub-branch A"
+      },
+      {
+        "id": "another_node_7c5c55_branch_2",
+        "content": "Sub-branch B"
+      },
+      {
+        "id": "another_node_7c5c55_branch_3",
+        "content": "Analyze repository structure, detect language and package manager"
+      }
+    ],
+    "concepts": [
+      "coding-advanced"
+    ]
+  }
+]

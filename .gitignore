@@ -1,2 +1,6 @@
 build/
 node_modules/
+out/
+cache.solhint.json
+.env
+.tsbuildinfo

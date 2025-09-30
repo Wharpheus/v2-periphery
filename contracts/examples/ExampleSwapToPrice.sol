@@ -1,30 +1,35 @@
-pragma solidity =0.6.6;
+pragma solidity ^0.8.28;
 
-import '@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol';
-import '@uniswap/lib/contracts/libraries/Babylonian.sol';
-import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
+import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol";
+import "@uniswap/lib/contracts/libraries/Babylonian.sol";
+import "@uniswap/lib/contracts/libraries/TransferHelper.sol";
 
-import '../libraries/UniswapV2LiquidityMathLibrary.sol';
-import '../interfaces/IERC20.sol';
-import '../interfaces/IUniswapV2Router01.sol';
-import '../libraries/SafeMath.sol';
-import '../libraries/UniswapV2Library.sol';
+import "../libraries/UniswapV2LiquidityMathLibrary.sol";
+import "../interfaces/IERC20.sol";
+import "../interfaces/IUniswapV2Router01.sol";
+import "../libraries/SafeMath.sol";
+import "../libraries/UniswapV2Library.sol";
 
+/// @title ExampleSwapToPrice
+/// @author Steven Dauplaise
+/// @notice See contract details below
 contract ExampleSwapToPrice {
     using SafeMath for uint256;
 
-    IUniswapV2Router01 public immutable router;
+    IUniswapV2Router01 /// @notice See variable details
+public immutable router;
     address public immutable factory;
 
-    constructor(address factory_, IUniswapV2Router01 router_) public {
+    constructor(address factory_, IUniswapV2Router01 router_) {
         factory = factory_;
         router = router_;
     }
 
     // swaps an amount of either token such that the trade is profit-maximizing, given an external true price
     // true price is expressed in the ratio of token A to token B
-    // caller must approve this contract to spend whichever token is intended to be swapped
-    function swapToPrice(
+    // caller must approve this to spend whichever token is intended to be swapped
+    /// @notice See function details
+function swapToPrice(
         address tokenA,
         address tokenB,
         uint256 truePriceTokenA,
@@ -44,12 +49,11 @@ contract ExampleSwapToPrice {
         {
             (uint256 reserveA, uint256 reserveB) = UniswapV2Library.getReserves(factory, tokenA, tokenB);
             (aToB, amountIn) = UniswapV2LiquidityMathLibrary.computeProfitMaximizingTrade(
-                truePriceTokenA, truePriceTokenB,
-                reserveA, reserveB
+                truePriceTokenA, truePriceTokenB, reserveA, reserveB
             );
         }
 
-        require(amountIn > 0, 'ExampleSwapToPrice: ZERO_AMOUNT_IN');
+        require(amountIn > 0, "ExampleSwapToPrice: ZERO_AMOUNT_IN");
 
         // spend up to the allowance of the token in
         uint256 maxSpend = aToB ? maxSpendTokenA : maxSpendTokenB;

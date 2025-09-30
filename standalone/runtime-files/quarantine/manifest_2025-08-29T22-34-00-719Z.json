@@ -1,0 +1,160 @@
+{
+  "generated_at": "2025-08-29T22:34:00.891Z",
+  "flagged": [
+    {
+      "file": "agent_scaffolding_blueprint_50bf46_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "another_node_2c5511_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "another_node_7c5c55_Agent.ts",
+      "reasons": [
+        "low_entropy(0.366 < 0.5)"
+      ]
+    },
+    {
+      "file": "central_concept_078712_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "central_concept_b86906_Agent.ts",
+      "reasons": [
+        "low_entropy(0.017 < 0.5)"
+      ]
+    },
+    {
+      "file": "code_documentation_generation_protocol_368bc5_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "diagnostics_health_checks_7f2479_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "elite_runtime_coding_agent_A1.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "error_handling_saga_recovery_8401b7_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "evolving_autoscaler_tuning_020f1c_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "integration_api_contract_validation_50c652_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "landing_page_generation_workflow_5d6af9_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_2eb6ad_Agent.ts",
+      "reasons": [
+        "low_entropy(0.321 < 0.5)"
+      ]
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_4ab144_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_774a08_Agent.ts",
+      "reasons": [
+        "low_entropy(0.321 < 0.5)"
+      ]
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_9719a2_Agent.ts",
+      "reasons": [
+        "low_entropy(0.321 < 0.5)"
+      ]
+    },
+    {
+      "file": "my_awesome_mindmap_02d637_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "my_awesome_mindmap_082e2b_Agent.ts",
+      "reasons": [
+        "low_entropy(0.358 < 0.5)"
+      ]
+    },
+    {
+      "file": "nft_minting_transaction_flow_7ae0e9_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "optimization_hotspot_optimization_19038f_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "smart_contract_deployment_pipeline_6b5413_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "troubleshooting_latency_spike_9c1ecf_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "troubleshooting_service_outage_bad096_Agent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.5)",
+        "shallow_branches(0 < 3)"
+      ]
+    }
+  ]
+}

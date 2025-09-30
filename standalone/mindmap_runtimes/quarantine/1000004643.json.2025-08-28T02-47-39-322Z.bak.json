@@ -1,0 +1,30 @@
+[
+  {
+    "runtime_id": "central_concept_a875a4",
+    "title": "Central Concept",
+    "source": "1000004643.txt",
+    "timestamp": "2025-08-28T02:47:38.817Z",
+    "branches": [
+      {
+        "id": "central_concept_a875a4_branch_1",
+        "content": "Aspect 1"
+      },
+      {
+        "id": "central_concept_a875a4_branch_2",
+        "content": "Feature A"
+      },
+      {
+        "id": "central_concept_a875a4_branch_3",
+        "content": "Feature B"
+      },
+      {
+        "id": "central_concept_a875a4_branch_4",
+        "content": "Aspect 2"
+      },
+      {
+        "id": "central_concept_a875a4_branch_5",
+        "content": "Feature C"
+      }
+    ]
+  }
+]

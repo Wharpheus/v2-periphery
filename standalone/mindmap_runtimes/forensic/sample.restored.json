@@ -1,0 +1,88 @@
+[
+  {
+    "runtime_id": "agent_scaffolding_blueprint_3856f6",
+    "title": "Agent Scaffolding Blueprint",
+    "source": "sample.json",
+    "branches": [
+      {
+        "id": "d78a29_branch_1",
+        "content": "Derive agent name from runtime_id and title"
+      },
+      {
+        "id": "d78a29_branch_2",
+        "content": "Generate TypeScript executor with SmartPayloadBuilder contracts"
+      },
+      {
+        "id": "d78a29_branch_3",
+        "content": "Embed source, branches, and timestamp into agent output"
+      },
+      {
+        "id": "d78a29_branch_4",
+        "content": "Write agent file to runtime-files/agents and log creation"
+      },
+      {
+        "id": "d78a29_branch_5",
+        "content": "Register agent for downstream orchestration"
+      }
+    ],
+    "concepts": [
+      "agent scaffolding",
+      "executor pattern",
+      "payload contract"
+    ],
+    "relationships": [
+      "depends_on: MindMapProcessor",
+      "depends_on: SmartPayloadBuilder"
+    ],
+    "hierarchy": {
+      "level": "core",
+      "priority": "medium"
+    },
+    "agent": "ForensicRefactor",
+    "status": "Refactored",
+    "notes": "Structure restored. Original file quarantined."
+  },
+  {
+    "runtime_id": "agent_scaffolding_blueprint_3856f6",
+    "title": "Agent Scaffolding Blueprint",
+    "source": "sample.json",
+    "branches": [
+      {
+        "id": "d78a29_branch_1",
+        "content": "Derive agent name from runtime_id and title"
+      },
+      {
+        "id": "d78a29_branch_2",
+        "content": "Generate TypeScript executor with SmartPayloadBuilder contracts"
+      },
+      {
+        "id": "d78a29_branch_3",
+        "content": "Embed source, branches, and timestamp into agent output"
+      },
+      {
+        "id": "d78a29_branch_4",
+        "content": "Write agent file to runtime-files/agents and log creation"
+      },
+      {
+        "id": "d78a29_branch_5",
+        "content": "Register agent for downstream orchestration"
+      }
+    ],
+    "concepts": [
+      "agent scaffolding",
+      "executor pattern",
+      "payload contract"
+    ],
+    "relationships": [
+      "depends_on: MindMapProcessor",
+      "depends_on: SmartPayloadBuilder"
+    ],
+    "hierarchy": {
+      "level": "core",
+      "priority": "medium"
+    },
+    "agent": "ForensicRefactor",
+    "status": "Refactored",
+    "notes": "Structure restored. Original file quarantined."
+  }
+]

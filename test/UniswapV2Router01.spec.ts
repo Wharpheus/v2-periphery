@@ -1,9 +1,11 @@
 import chai, { expect } from 'chai'
-import { Contract } from 'ethers'
-import { AddressZero, Zero, MaxUint256 } from 'ethers/constants'
-import { BigNumber, bigNumberify } from 'ethers/utils'
+import { ethers } from 'ethers'
+import { Contract, BigNumber } from 'ethers'
 import { solidity, MockProvider, createFixtureLoader } from 'ethereum-waffle'
-import { ecsign } from 'ethereumjs-util'
+
+const { AddressZero, Zero, MaxUint256 } = ethers.constants
+const bigNumberify = BigNumber.from
+import { ecsign } from '@ethereumjs/util'
 
 import { expandTo18Decimals, getApprovalDigest, mineBlock, MINIMUM_LIQUIDITY } from './shared/utilities'
 import { v2Fixture } from './shared/fixtures'
@@ -22,12 +24,13 @@ enum RouterVersion {
 describe('UniswapV2Router{01,02}', () => {
   for (const routerVersion of Object.keys(RouterVersion)) {
     const provider = new MockProvider({
-      hardfork: 'istanbul',
-      mnemonic: 'horn horn horn horn horn horn horn horn horn horn horn horn',
-      gasLimit: 9999999
+      // @ts-ignore
+      gasLimit: 9999999,
+      // @ts-ignore
+      hardfork: 'istanbul'
     })
-    const [wallet] = provider.getWallets()
-    const loadFixture = createFixtureLoader(provider, [wallet])
+    const wallet = ethers.Wallet.fromMnemonic('horn horn horn horn horn horn horn horn horn horn horn horn').connect(provider)
+    const loadFixture = createFixtureLoader([wallet], provider)
 
     let token0: Contract
     let token1: Contract
@@ -39,6 +42,7 @@ describe('UniswapV2Router{01,02}', () => {
     let WETHPair: Contract
     let routerEventEmitter: Contract
     beforeEach(async function() {
+      // @ts-ignore
       const fixture = await loadFixture(v2Fixture)
       token0 = fixture.token0
       token1 = fixture.token1

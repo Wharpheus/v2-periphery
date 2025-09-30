@@ -1,4 +1,65 @@
+// file: C:\Users\Lindsay\Source\Repos\v2-periphery\test\ExampleSlidingWindowOracle.spec.ts
+
 import chai, { expect } from 'chai'
+import { Contract } from 'ethers'
+import { BigNumber, bigNumberify } from 'ethers/utils'
+import { solidity, MockProvider, createFixtureLoader, deployContract } from 'ethereum-waffle'
+
+import { expandTo18Decimals, mineBlock, encodePrice } from './shared/utilities'
+import { v2Fixture } from './shared/fixtures'
+
+import ExampleSlidingWindowOracle from '../build/ExampleSlidingWindowOracle.json'
+
+chai.use(solidity)
+
+const overrides = {
+  gasLimit: 9999999
+}
+
+const defaultToken0Amount = expandTo18Decimals(5)
+const defaultToken1Amount = expandTo18Decimals(10)
+
+// --- Test: update initializes observations for new token pairs ---
+// This test ensures that calling update for a new token pair initializes all observations
+describe('ExampleSlidingWindowOracle', () => {
+  // ...existing setup code...
+
+  describe('#update', () => {
+    let slidingWindowOracle: Contract
+    let token0: Contract, token1: Contract, token2: Contract, pair2: Contract, factory: Contract
+    const defaultWindowSize = 86400 // 24 hours
+    const defaultGranularity = 24 // 1 hour each
+
+    beforeEach('deploy fixture and oracle', async function () {
+      const fixture = await createFixtureLoader(new MockProvider().getWallets())(v2Fixture)
+      token0 = fixture.token0
+      token1 = fixture.token1
+      token2 = fixture.token2 || fixture.tokenB // fallback for fixture shape
+      factory = fixture.factoryV2
+      pair2 = await fixture.factoryV2.getPair(token0.address, token2.address)
+      slidingWindowOracle = await deployContract(fixture.wallet, ExampleSlidingWindowOracle, [factory.address, defaultWindowSize, defaultGranularity], overrides)
+    })
+
+    it('initializes all observations for a new token pair', async () => {
+      // Add liquidity to the new pair if needed
+      // (Assume token2 exists and is set up in the fixture)
+      await token0.transfer(pair2, defaultToken0Amount)
+      await token2.transfer(pair2, defaultToken1Amount)
+      await (await ethers.getContractAt('IUniswapV2Pair', pair2)).sync()
+
+      // Call update for the new pair
+      await slidingWindowOracle.update(token0.address, token2.address, overrides)
+
+      // All observations should be initialized
+      for (let i = 0; i < defaultGranularity; i++) {
+        const obs = await slidingWindowOracle.pairObservations(pair2, i)
+        expect(obs[0]).to.not.eq(0) // timestamp
+        expect(obs[1]).to.not.eq(0) // price0Cumulative
+        expect(obs[2]).to.not.eq(0) // price1Cumulative
+      }
+    })
+  })
+})
 import { Contract } from 'ethers'
 import { BigNumber, bigNumberify } from 'ethers/utils'
 import { solidity, MockProvider, createFixtureLoader, deployContract } from 'ethereum-waffle'
@@ -181,6 +242,62 @@ describe('ExampleSlidingWindowOracle', () => {
 
     it('fails for invalid pair', async () => {
       await expect(slidingWindowOracle.update(weth.address, token1.address)).to.be.reverted
+    })
+
+    // --- Additional tests for refactored helpers ---
+    it('internal _isNewPair returns true for new pair and false after initialization', async () => {
+      // Deploy a new oracle and check for a new pair
+      const pairAddress = pair.address
+      // _isNewPair is internal, so we test via update logic
+      // Before update, should be new
+      expect(await slidingWindowOracle.pairObservations(pairAddress, 0)).to.deep.eq([bigNumberify(0), bigNumberify(0), bigNumberify(0)])
+      await slidingWindowOracle.update(token0.address, token1.address, overrides)
+      // After update, should be initialized
+      const obs = await slidingWindowOracle.pairObservations(pairAddress, 0)
+      expect(obs[0]).to.not.eq(0)
+    })
+
+    it('internal _initializeObservationsForPair initializes all slots', async () => {
+      // Remove all observations for a new pair (simulate new pair)
+      const fixture = await loadFixture(v2Fixture)
+      const tokenA = fixture.token0
+      const tokenB = fixture.token2 || fixture.tokenB
+      const factoryV2 = fixture.factoryV2
+      const pair2Addr = await factoryV2.getPair(tokenA.address, tokenB.address)
+      await tokenA.transfer(pair2Addr, defaultToken0Amount)
+      await tokenB.transfer(pair2Addr, defaultToken1Amount)
+      await (await ethers.getContractAt('IUniswapV2Pair', pair2Addr)).sync()
+      await slidingWindowOracle.update(tokenA.address, tokenB.address, overrides)
+      for (let i = 0; i < defaultGranularity; i++) {
+        const obs = await slidingWindowOracle.pairObservations(pair2Addr, i)
+        expect(obs[0]).to.not.eq(0)
+        expect(obs[1]).to.not.eq(0)
+        expect(obs[2]).to.not.eq(0)
+      }
+    })
+
+    it('internal _fillEmptyObservations does not overwrite initialized slots', async () => {
+      await slidingWindowOracle.update(token0.address, token1.address, overrides)
+      // All slots should be initialized, so calling update again should not overwrite
+      const before = await slidingWindowOracle.pairObservations(pair.address, 0)
+      await slidingWindowOracle.update(token0.address, token1.address, overrides)
+      const after = await slidingWindowOracle.pairObservations(pair.address, 0)
+      expect(before).to.deep.eq(after)
+    })
+
+    it('internal _updateObservation only updates if period elapsed', async () => {
+      await slidingWindowOracle.update(token0.address, token1.address, overrides)
+      const before = await slidingWindowOracle.pairObservations(pair.address, 0)
+      // Mine a block in the same period
+      await mineBlock(provider, startTime + 100)
+      await slidingWindowOracle.update(token0.address, token1.address, overrides)
+      const after = await slidingWindowOracle.pairObservations(pair.address, 0)
+      expect(before).to.deep.eq(after)
+      // Mine a block in the next period
+      await mineBlock(provider, startTime + 3600)
+      await slidingWindowOracle.update(token0.address, token1.address, overrides)
+      const updated = await slidingWindowOracle.pairObservations(pair.address, observationIndexOf(startTime + 3600))
+      expect(updated[0]).to.eq(startTime + 3600)
     })
   })
 

@@ -1,0 +1,14 @@
+{
+  "generated_at": "2025-08-24T18:58:42.876Z",
+  "thresholds": {
+    "minEntropy": 0.55,
+    "minBranches": 3
+  },
+  "summary": {
+    "total": 9,
+    "flagged": 0,
+    "kept": 9,
+    "dryRun": false
+  },
+  "flagged": []
+}

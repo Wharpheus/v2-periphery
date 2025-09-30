@@ -1,0 +1,18 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"types": ["node", "mocha", "chai"],
+		"typeRoots": ["./node_modules/@types"],
+		"outDir": "./out-tsc/test",
+		"rootDir": "."
+	},
+	"include": [
+		"src/**/*.test.ts"
+	],
+	"exclude": [
+		"src/**/__tests__/*",
+		"src/test/e2e/**/*.test.ts"
+	]
+}

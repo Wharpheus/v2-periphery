@@ -1,0 +1,66 @@
+{
+	"name": "agent-monitor-dashboard",
+	"displayName": "Agent Monitor Dashboard",
+	"description": "Real-time agent monitoring and creation dashboard for VSCode",
+	"version": "0.0.1",
+	"publisher": "wharpheus",
+	"repository": "https://github.com/Wharpheus/v2-periphery",
+	"engines": {
+		"vscode": "^1.80.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"views": {
+			"explorer": [
+				{
+					"id": "agentMonitorDashboard",
+					"name": "Agent Dashboard",
+					"icon": "$(dashboard)"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "agentMonitorDashboard.openDashboard",
+				"title": "Open Agent Dashboard",
+				"icon": "$(dashboard)"
+			},
+			{
+				"command": "agentMonitorDashboard.refresh",
+				"title": "Refresh Dashboard",
+				"icon": "$(refresh)"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "agentMonitorDashboard.refresh",
+					"when": "view == agentMonitorDashboard",
+					"group": "navigation"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "agentMonitorDashboard.openDashboard"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "node -e \"console.log('Extension ready')\"",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.80.0",
+		"@types/node": "20.x",
+		"eslint": "^8.50.0",
+		"typescript": "^5.2.2"
+	}
+}

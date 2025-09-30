@@ -1,0 +1,28 @@
+{
+	"name": "cline-core",
+	"version": "0.0.1",
+	"type": "module",
+	"main": "cline-core.js",
+	"scripts": {
+		"test": "mocha --reporter spec \"**/*.test.js\" \"**/*.test.mjs\"",
+		"test:ci": "mocha --reporter dot \"**/*.test.js\" \"**/*.test.mjs\"",
+		"mindmaps": "node ./mindmap-integrate.mjs",
+		"dispatch": "node ./mindmap-dispatch.mjs"
+	},
+	"dependencies": {
+		"@grpc/grpc-js": "^1.13.3",
+		"@grpc/reflection": "^1.0.4",
+		"axios": "^1.7.7",
+		"dotenv": "^16.4.5",
+		"grpc-health-check": "^2.0.2",
+		"open": "^10.1.2",
+		"vscode-uri": "^3.1.0"
+	},
+	"devDependencies": {
+		"mocha": "^10.5.0",
+		"sinon": "^17.0.1"
+	},
+	"engines": {
+		"node": ">=18"
+	}
+}

@@ -1,0 +1,306 @@
+{
+  "generated_at": "2025-08-24T07:52:13.369Z",
+  "thresholds": {
+    "minEntropy": 0.55,
+    "minBranches": 3
+  },
+  "summary": {
+    "total": 28,
+    "flagged": 19,
+    "kept": 9,
+    "dryRun": false
+  },
+  "flagged": [
+    {
+      "file": "another_node_6b8fed_Agent.ts",
+      "runtime_id": "another_node_6b8fed",
+      "title": "Another Node",
+      "agent_role": "validator",
+      "entropy_score": 0.447,
+      "branch_count": 3,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0.447 < 0.55)"
+      ],
+      "action": "file_missing"
+    },
+    {
+      "file": "another_node_b78a9e_Agent.ts",
+      "runtime_id": "another_node_b78a9e",
+      "title": "Another Node",
+      "agent_role": "validator",
+      "entropy_score": 0.447,
+      "branch_count": 3,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0.447 < 0.55)"
+      ],
+      "action": "file_missing"
+    },
+    {
+      "file": "central_concept_ac42cd_Agent.ts",
+      "runtime_id": "central_concept_ac42cd",
+      "title": "Central Concept",
+      "agent_role": "generic",
+      "entropy_score": 0.017,
+      "branch_count": 5,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0.017 < 0.55)"
+      ],
+      "action": "file_missing"
+    },
+    {
+      "file": "central_concept_d83ff9_Agent.ts",
+      "runtime_id": "central_concept_d83ff9",
+      "title": "Central Concept",
+      "agent_role": "generic",
+      "entropy_score": 0.017,
+      "branch_count": 5,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0.017 < 0.55)"
+      ],
+      "action": "file_missing"
+    },
+    {
+      "file": "clinemap_runtime_health_audit_18d994_Agent.ts",
+      "runtime_id": "clinemap_runtime_health_audit_18d994",
+      "title": "Clinemap Runtime Health Audit",
+      "agent_role": "scaffolder",
+      "entropy_score": 0.221,
+      "branch_count": 5,
+      "concepts": [
+        "runtime validation",
+        "entropy analysis",
+        "triage"
+      ],
+      "reasons": [
+        "low_entropy(0.221 < 0.55)"
+      ],
+      "action": "file_missing"
+    },
+    {
+      "file": "CodeDocumentationAgent.ts",
+      "runtime_id": null,
+      "title": "Code Documentation Agent",
+      "agent_role": "docgen",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.55)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "code_documentation_generation_protocol_37846e_Agent.ts",
+      "runtime_id": "code_documentation_generation_protocol_37846e",
+      "title": "Code Documentation Generation Protocol",
+      "agent_role": "docgen",
+      "entropy_score": 0.535,
+      "branch_count": 5,
+      "concepts": [
+        "documentation",
+        "markdown",
+        "code intent"
+      ],
+      "reasons": [
+        "low_entropy(0.535 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "code_documentation_generation_protocol_6b5b5f_Agent.ts",
+      "runtime_id": "code_documentation_generation_protocol_6b5b5f",
+      "title": "Code Documentation Generation Protocol",
+      "agent_role": "docgen",
+      "entropy_score": 0.535,
+      "branch_count": 5,
+      "concepts": [
+        "documentation",
+        "markdown",
+        "code intent"
+      ],
+      "reasons": [
+        "low_entropy(0.535 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "code_documentation_generation_protocol_8739a1_Agent.ts",
+      "runtime_id": "code_documentation_generation_protocol_8739a1",
+      "title": "Code Documentation Generation Protocol",
+      "agent_role": "docgen",
+      "entropy_score": 0.535,
+      "branch_count": 5,
+      "concepts": [
+        "documentation",
+        "markdown",
+        "code intent"
+      ],
+      "reasons": [
+        "low_entropy(0.535 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "code_documentation_generation_protocol_fadb41_Agent.ts",
+      "runtime_id": "code_documentation_generation_protocol_fadb41",
+      "title": "Code Documentation Generation Protocol",
+      "agent_role": "docgen",
+      "entropy_score": 0.535,
+      "branch_count": 5,
+      "concepts": [
+        "documentation",
+        "markdown",
+        "code intent"
+      ],
+      "reasons": [
+        "low_entropy(0.535 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "LandingPageAgent.ts",
+      "runtime_id": null,
+      "title": "Landing Page Agent",
+      "agent_role": "generator",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.55)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_4ab144_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_4ab144",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "agent_role": "parser",
+      "entropy_score": 0.321,
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "reasons": [
+        "low_entropy(0.321 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_774a08_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_774a08",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "agent_role": "parser",
+      "entropy_score": 0.321,
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "reasons": [
+        "low_entropy(0.321 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_8c8b4b_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_8c8b4b",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "agent_role": "parser",
+      "entropy_score": 0.321,
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "reasons": [
+        "low_entropy(0.321 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_a8a78e_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_a8a78e",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "agent_role": "parser",
+      "entropy_score": 0.321,
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "reasons": [
+        "low_entropy(0.321 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "MintNFTAgent.ts",
+      "runtime_id": null,
+      "title": "Mint NFTAgent",
+      "agent_role": "minter",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.55)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "my_awesome_mindmap_273532_Agent.ts",
+      "runtime_id": "my_awesome_mindmap_273532",
+      "title": "My Awesome Mindmap",
+      "agent_role": "parser",
+      "entropy_score": 0.358,
+      "branch_count": 3,
+      "concepts": [
+        "mindmap"
+      ],
+      "reasons": [
+        "low_entropy(0.358 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "my_awesome_mindmap_87b7eb_Agent.ts",
+      "runtime_id": "my_awesome_mindmap_87b7eb",
+      "title": "My Awesome Mindmap",
+      "agent_role": "parser",
+      "entropy_score": 0.358,
+      "branch_count": 3,
+      "concepts": [
+        "mindmap"
+      ],
+      "reasons": [
+        "low_entropy(0.358 < 0.55)"
+      ],
+      "action": "quarantined"
+    },
+    {
+      "file": "SmartContractAgent.ts",
+      "runtime_id": null,
+      "title": "Smart Contract Agent",
+      "agent_role": "deployer",
+      "entropy_score": 0,
+      "branch_count": 0,
+      "concepts": [],
+      "reasons": [
+        "low_entropy(0 < 0.55)",
+        "shallow_branches(0 < 3)"
+      ],
+      "action": "quarantined"
+    }
+  ]
+}

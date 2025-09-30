@@ -1,0 +1,123 @@
+{
+  "generated_at": "2025-08-24T07:52:13.369Z",
+  "flagged": [
+    {
+      "file": "another_node_6b8fed_Agent.ts",
+      "reasons": [
+        "low_entropy(0.447 < 0.55)"
+      ]
+    },
+    {
+      "file": "another_node_b78a9e_Agent.ts",
+      "reasons": [
+        "low_entropy(0.447 < 0.55)"
+      ]
+    },
+    {
+      "file": "central_concept_ac42cd_Agent.ts",
+      "reasons": [
+        "low_entropy(0.017 < 0.55)"
+      ]
+    },
+    {
+      "file": "central_concept_d83ff9_Agent.ts",
+      "reasons": [
+        "low_entropy(0.017 < 0.55)"
+      ]
+    },
+    {
+      "file": "clinemap_runtime_health_audit_18d994_Agent.ts",
+      "reasons": [
+        "low_entropy(0.221 < 0.55)"
+      ]
+    },
+    {
+      "file": "CodeDocumentationAgent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.55)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "code_documentation_generation_protocol_37846e_Agent.ts",
+      "reasons": [
+        "low_entropy(0.535 < 0.55)"
+      ]
+    },
+    {
+      "file": "code_documentation_generation_protocol_6b5b5f_Agent.ts",
+      "reasons": [
+        "low_entropy(0.535 < 0.55)"
+      ]
+    },
+    {
+      "file": "code_documentation_generation_protocol_8739a1_Agent.ts",
+      "reasons": [
+        "low_entropy(0.535 < 0.55)"
+      ]
+    },
+    {
+      "file": "code_documentation_generation_protocol_fadb41_Agent.ts",
+      "reasons": [
+        "low_entropy(0.535 < 0.55)"
+      ]
+    },
+    {
+      "file": "LandingPageAgent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.55)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_4ab144_Agent.ts",
+      "reasons": [
+        "low_entropy(0.321 < 0.55)"
+      ]
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_774a08_Agent.ts",
+      "reasons": [
+        "low_entropy(0.321 < 0.55)"
+      ]
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_8c8b4b_Agent.ts",
+      "reasons": [
+        "low_entropy(0.321 < 0.55)"
+      ]
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_a8a78e_Agent.ts",
+      "reasons": [
+        "low_entropy(0.321 < 0.55)"
+      ]
+    },
+    {
+      "file": "MintNFTAgent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.55)",
+        "shallow_branches(0 < 3)"
+      ]
+    },
+    {
+      "file": "my_awesome_mindmap_273532_Agent.ts",
+      "reasons": [
+        "low_entropy(0.358 < 0.55)"
+      ]
+    },
+    {
+      "file": "my_awesome_mindmap_87b7eb_Agent.ts",
+      "reasons": [
+        "low_entropy(0.358 < 0.55)"
+      ]
+    },
+    {
+      "file": "SmartContractAgent.ts",
+      "reasons": [
+        "low_entropy(0 < 0.55)",
+        "shallow_branches(0 < 3)"
+      ]
+    }
+  ]
+}

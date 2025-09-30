@@ -1,0 +1,40 @@
+[
+  {
+    "runtime_id": "main_topic",
+    "title": "Main Topic",
+    "branches": [
+      {
+        "id": "main_topic_branch_1",
+        "content": "Subtopic 1"
+      },
+      {
+        "id": "main_topic_branch_2",
+        "content": "Subtopic 2"
+      }
+    ]
+  },
+  {
+    "runtime_id": "subtopic_1",
+    "title": "Subtopic 1",
+    "branches": [
+      {
+        "id": "subtopic_1_branch_1",
+        "content": "Detail 1"
+      },
+      {
+        "id": "subtopic_1_branch_2",
+        "content": "Detail 2"
+      }
+    ]
+  },
+  {
+    "runtime_id": "subtopic_2",
+    "title": "Subtopic 2",
+    "branches": [
+      {
+        "id": "subtopic_2_branch_1",
+        "content": "Detail 3"
+      }
+    ]
+  }
+]

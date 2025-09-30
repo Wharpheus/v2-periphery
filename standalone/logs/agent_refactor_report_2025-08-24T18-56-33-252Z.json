@@ -1,0 +1,962 @@
+{
+  "generated_at": "2025-08-24T18:56:33.255Z",
+  "source": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/runtime-files/quarantine",
+  "thresholds": {
+    "minEntropy": 0.65,
+    "minBranches": 3
+  },
+  "items": [
+    {
+      "file": "another_node_6b8fed_Agent.ts",
+      "runtime_id": "another_node_6b8fed",
+      "title": "Another Node",
+      "original": {
+        "branches": [
+          {
+            "id": "another_node_6b8fed_branch_1",
+            "content": "Sub-branch A"
+          },
+          {
+            "id": "another_node_6b8fed_branch_2",
+            "content": "Sub-branch B"
+          },
+          {
+            "id": "another_node_6b8fed_branch_3",
+            "content": "Initialize runtime context and validate inputs"
+          }
+        ],
+        "concepts": []
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "another_node_6b8fed_branch_1",
+            "content": "Sub-branch A"
+          },
+          {
+            "id": "another_node_6b8fed_branch_2",
+            "content": "Sub-branch B"
+          },
+          {
+            "id": "another_node_6b8fed_branch_3",
+            "content": "Initialize runtime context and validate inputs"
+          }
+        ],
+        "concepts": [
+          "validator"
+        ],
+        "entropy_score": 0.487,
+        "signal_grade": "Low",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "another_node_b78a9e_Agent.ts",
+      "runtime_id": "another_node_b78a9e",
+      "title": "Another Node",
+      "original": {
+        "branches": [
+          {
+            "id": "another_node_b78a9e_branch_1",
+            "content": "Sub-branch A"
+          },
+          {
+            "id": "another_node_b78a9e_branch_2",
+            "content": "Sub-branch B"
+          },
+          {
+            "id": "another_node_b78a9e_branch_3",
+            "content": "Initialize runtime context and validate inputs"
+          }
+        ],
+        "concepts": []
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "another_node_b78a9e_branch_1",
+            "content": "Sub-branch A"
+          },
+          {
+            "id": "another_node_b78a9e_branch_2",
+            "content": "Sub-branch B"
+          },
+          {
+            "id": "another_node_b78a9e_branch_3",
+            "content": "Initialize runtime context and validate inputs"
+          }
+        ],
+        "concepts": [
+          "validator"
+        ],
+        "entropy_score": 0.487,
+        "signal_grade": "Low",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "central_concept_ac42cd_Agent.ts",
+      "runtime_id": "central_concept_ac42cd",
+      "title": "Central Concept",
+      "original": {
+        "branches": [
+          {
+            "id": "central_concept_ac42cd_branch_1",
+            "content": "Aspect 1"
+          },
+          {
+            "id": "central_concept_ac42cd_branch_2",
+            "content": "Feature A"
+          },
+          {
+            "id": "central_concept_ac42cd_branch_3",
+            "content": "Feature B"
+          },
+          {
+            "id": "central_concept_ac42cd_branch_4",
+            "content": "Aspect 2"
+          },
+          {
+            "id": "central_concept_ac42cd_branch_5",
+            "content": "Feature C"
+          }
+        ],
+        "concepts": []
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "central_concept_ac42cd_branch_1",
+            "content": "Derive agent name from runtime_id and title"
+          },
+          {
+            "id": "central_concept_ac42cd_branch_2",
+            "content": "Generate TypeScript executor with SmartPayloadBuilder contracts"
+          },
+          {
+            "id": "central_concept_ac42cd_branch_3",
+            "content": "Embed source, branches, and timestamp into agent output"
+          }
+        ],
+        "concepts": [
+          "smart-contract"
+        ],
+        "entropy_score": 0.547,
+        "signal_grade": "Medium",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "central_concept_d83ff9_Agent.ts",
+      "runtime_id": "central_concept_d83ff9",
+      "title": "Central Concept",
+      "original": {
+        "branches": [
+          {
+            "id": "central_concept_d83ff9_branch_1",
+            "content": "Aspect 1"
+          },
+          {
+            "id": "central_concept_d83ff9_branch_2",
+            "content": "Feature A"
+          },
+          {
+            "id": "central_concept_d83ff9_branch_3",
+            "content": "Feature B"
+          },
+          {
+            "id": "central_concept_d83ff9_branch_4",
+            "content": "Aspect 2"
+          },
+          {
+            "id": "central_concept_d83ff9_branch_5",
+            "content": "Feature C"
+          }
+        ],
+        "concepts": []
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "central_concept_d83ff9_branch_1",
+            "content": "Derive agent name from runtime_id and title"
+          },
+          {
+            "id": "central_concept_d83ff9_branch_2",
+            "content": "Generate TypeScript executor with SmartPayloadBuilder contracts"
+          },
+          {
+            "id": "central_concept_d83ff9_branch_3",
+            "content": "Embed source, branches, and timestamp into agent output"
+          }
+        ],
+        "concepts": [
+          "smart-contract"
+        ],
+        "entropy_score": 0.547,
+        "signal_grade": "Medium",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "clinemap_runtime_health_audit_18d994_Agent.ts",
+      "runtime_id": "clinemap_runtime_health_audit_18d994",
+      "title": "Clinemap Runtime Health Audit",
+      "original": {
+        "branches": [
+          {
+            "id": "51443a_branch_1",
+            "content": "Scan mindmap payloads and compute entropy/depth metrics"
+          },
+          {
+            "id": "51443a_branch_2",
+            "content": "Flag nodes with shallow structure and missing metadata"
+          },
+          {
+            "id": "51443a_branch_3",
+            "content": "Emit diagnostics for clinemap indexing and triage"
+          },
+          {
+            "id": "51443a_branch_4",
+            "content": "Route flagged nodes to refactor pipeline"
+          },
+          {
+            "id": "51443a_branch_5",
+            "content": "Persist validation report with timestamped fingerprint"
+          }
+        ],
+        "concepts": [
+          "runtime validation",
+          "entropy analysis",
+          "triage"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "51443a_branch_1",
+            "content": "Scan mindmap payloads and compute entropy/depth metrics"
+          },
+          {
+            "id": "51443a_branch_2",
+            "content": "Flag nodes with shallow structure and missing metadata"
+          },
+          {
+            "id": "51443a_branch_3",
+            "content": "Emit diagnostics for clinemap indexing and triage"
+          },
+          {
+            "id": "51443a_branch_4",
+            "content": "Route flagged nodes to refactor pipeline"
+          },
+          {
+            "id": "51443a_branch_5",
+            "content": "Persist validation report with timestamped fingerprint"
+          }
+        ],
+        "concepts": [
+          "runtime validation",
+          "entropy analysis",
+          "triage",
+          "landing-page",
+          "mindmap",
+          "validator"
+        ],
+        "entropy_score": 0.301,
+        "signal_grade": "Low",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "CodeDocumentationAgent.ts",
+      "status": "skipped",
+      "reason": "no_scaffold_output_found"
+    },
+    {
+      "file": "code_documentation_generation_protocol_37846e_Agent.ts",
+      "runtime_id": "code_documentation_generation_protocol_37846e",
+      "title": "Code Documentation Generation Protocol",
+      "original": {
+        "branches": [
+          {
+            "id": "6992ed_branch_1",
+            "content": "Infer code intent and behavior from lexical signals"
+          },
+          {
+            "id": "6992ed_branch_2",
+            "content": "Assemble markdown with snippet, description, and usage"
+          },
+          {
+            "id": "6992ed_branch_3",
+            "content": "Store artifact in public/ and append to runtime log"
+          },
+          {
+            "id": "6992ed_branch_4",
+            "content": "Surface preview path for quick review"
+          },
+          {
+            "id": "6992ed_branch_5",
+            "content": "Annotate with runtime_id and scroll reference"
+          }
+        ],
+        "concepts": [
+          "documentation",
+          "markdown",
+          "code intent"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "6992ed_branch_1",
+            "content": "Infer code intent and behavior from lexical signals"
+          },
+          {
+            "id": "6992ed_branch_2",
+            "content": "Assemble markdown with snippet, description, and usage"
+          },
+          {
+            "id": "6992ed_branch_3",
+            "content": "Store artifact in public/ and append to runtime log"
+          },
+          {
+            "id": "6992ed_branch_4",
+            "content": "Surface preview path for quick review"
+          },
+          {
+            "id": "6992ed_branch_5",
+            "content": "Annotate with runtime_id and scroll reference"
+          }
+        ],
+        "concepts": [
+          "documentation",
+          "markdown",
+          "code intent",
+          "landing-page",
+          "mindmap"
+        ],
+        "entropy_score": 0.615,
+        "signal_grade": "Medium",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "code_documentation_generation_protocol_6b5b5f_Agent.ts",
+      "runtime_id": "code_documentation_generation_protocol_6b5b5f",
+      "title": "Code Documentation Generation Protocol",
+      "original": {
+        "branches": [
+          {
+            "id": "c487a4_branch_1",
+            "content": "Infer code intent and behavior from lexical signals"
+          },
+          {
+            "id": "c487a4_branch_2",
+            "content": "Assemble markdown with snippet, description, and usage"
+          },
+          {
+            "id": "c487a4_branch_3",
+            "content": "Store artifact in public/ and append to runtime log"
+          },
+          {
+            "id": "c487a4_branch_4",
+            "content": "Surface preview path for quick review"
+          },
+          {
+            "id": "c487a4_branch_5",
+            "content": "Annotate with runtime_id and scroll reference"
+          }
+        ],
+        "concepts": [
+          "documentation",
+          "markdown",
+          "code intent"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "c487a4_branch_1",
+            "content": "Infer code intent and behavior from lexical signals"
+          },
+          {
+            "id": "c487a4_branch_2",
+            "content": "Assemble markdown with snippet, description, and usage"
+          },
+          {
+            "id": "c487a4_branch_3",
+            "content": "Store artifact in public/ and append to runtime log"
+          },
+          {
+            "id": "c487a4_branch_4",
+            "content": "Surface preview path for quick review"
+          },
+          {
+            "id": "c487a4_branch_5",
+            "content": "Annotate with runtime_id and scroll reference"
+          }
+        ],
+        "concepts": [
+          "documentation",
+          "markdown",
+          "code intent",
+          "landing-page",
+          "mindmap"
+        ],
+        "entropy_score": 0.615,
+        "signal_grade": "Medium",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "code_documentation_generation_protocol_8739a1_Agent.ts",
+      "runtime_id": "code_documentation_generation_protocol_8739a1",
+      "title": "Code Documentation Generation Protocol",
+      "original": {
+        "branches": [
+          {
+            "id": "5f4a35_branch_1",
+            "content": "Infer code intent and behavior from lexical signals"
+          },
+          {
+            "id": "5f4a35_branch_2",
+            "content": "Assemble markdown with snippet, description, and usage"
+          },
+          {
+            "id": "5f4a35_branch_3",
+            "content": "Store artifact in public/ and append to runtime log"
+          },
+          {
+            "id": "5f4a35_branch_4",
+            "content": "Surface preview path for quick review"
+          },
+          {
+            "id": "5f4a35_branch_5",
+            "content": "Annotate with runtime_id and scroll reference"
+          }
+        ],
+        "concepts": [
+          "documentation",
+          "markdown",
+          "code intent"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "5f4a35_branch_1",
+            "content": "Infer code intent and behavior from lexical signals"
+          },
+          {
+            "id": "5f4a35_branch_2",
+            "content": "Assemble markdown with snippet, description, and usage"
+          },
+          {
+            "id": "5f4a35_branch_3",
+            "content": "Store artifact in public/ and append to runtime log"
+          },
+          {
+            "id": "5f4a35_branch_4",
+            "content": "Surface preview path for quick review"
+          },
+          {
+            "id": "5f4a35_branch_5",
+            "content": "Annotate with runtime_id and scroll reference"
+          }
+        ],
+        "concepts": [
+          "documentation",
+          "markdown",
+          "code intent",
+          "landing-page",
+          "mindmap"
+        ],
+        "entropy_score": 0.615,
+        "signal_grade": "Medium",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "code_documentation_generation_protocol_fadb41_Agent.ts",
+      "runtime_id": "code_documentation_generation_protocol_fadb41",
+      "title": "Code Documentation Generation Protocol",
+      "original": {
+        "branches": [
+          {
+            "id": "baa393_branch_1",
+            "content": "Infer code intent and behavior from lexical signals"
+          },
+          {
+            "id": "baa393_branch_2",
+            "content": "Assemble markdown with snippet, description, and usage"
+          },
+          {
+            "id": "baa393_branch_3",
+            "content": "Store artifact in public/ and append to runtime log"
+          },
+          {
+            "id": "baa393_branch_4",
+            "content": "Surface preview path for quick review"
+          },
+          {
+            "id": "baa393_branch_5",
+            "content": "Annotate with runtime_id and scroll reference"
+          }
+        ],
+        "concepts": [
+          "documentation",
+          "markdown",
+          "code intent"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "baa393_branch_1",
+            "content": "Infer code intent and behavior from lexical signals"
+          },
+          {
+            "id": "baa393_branch_2",
+            "content": "Assemble markdown with snippet, description, and usage"
+          },
+          {
+            "id": "baa393_branch_3",
+            "content": "Store artifact in public/ and append to runtime log"
+          },
+          {
+            "id": "baa393_branch_4",
+            "content": "Surface preview path for quick review"
+          },
+          {
+            "id": "baa393_branch_5",
+            "content": "Annotate with runtime_id and scroll reference"
+          }
+        ],
+        "concepts": [
+          "documentation",
+          "markdown",
+          "code intent",
+          "landing-page",
+          "mindmap"
+        ],
+        "entropy_score": 0.615,
+        "signal_grade": "Medium",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "LandingPageAgent.ts",
+      "status": "skipped",
+      "reason": "no_scaffold_output_found"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_4ab144_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_4ab144",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "original": {
+        "branches": [
+          {
+            "id": "28c41a_branch_1",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "28c41a_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "28c41a_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          },
+          {
+            "id": "28c41a_branch_4",
+            "content": "Attach troubleshooting hooks and error fingerprints"
+          }
+        ],
+        "concepts": [
+          "mindmap",
+          "intent parsing",
+          "payload synthesis"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "28c41a_branch_1",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "28c41a_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "28c41a_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          },
+          {
+            "id": "28c41a_branch_4",
+            "content": "Attach troubleshooting hooks and error fingerprints"
+          }
+        ],
+        "concepts": [
+          "mindmap",
+          "intent parsing",
+          "payload synthesis"
+        ],
+        "entropy_score": 0.321,
+        "signal_grade": "Low",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_774a08_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_774a08",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "original": {
+        "branches": [
+          {
+            "id": "2f0560_branch_1",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "2f0560_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "2f0560_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          },
+          {
+            "id": "2f0560_branch_4",
+            "content": "Attach troubleshooting hooks and error fingerprints"
+          }
+        ],
+        "concepts": [
+          "mindmap",
+          "intent parsing",
+          "payload synthesis"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "2f0560_branch_1",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "2f0560_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "2f0560_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          },
+          {
+            "id": "2f0560_branch_4",
+            "content": "Attach troubleshooting hooks and error fingerprints"
+          }
+        ],
+        "concepts": [
+          "mindmap",
+          "intent parsing",
+          "payload synthesis"
+        ],
+        "entropy_score": 0.321,
+        "signal_grade": "Low",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_8c8b4b_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_8c8b4b",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "original": {
+        "branches": [
+          {
+            "id": "32dd28_branch_1",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "32dd28_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "32dd28_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          },
+          {
+            "id": "32dd28_branch_4",
+            "content": "Attach troubleshooting hooks and error fingerprints"
+          }
+        ],
+        "concepts": [
+          "mindmap",
+          "intent parsing",
+          "payload synthesis"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "32dd28_branch_1",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "32dd28_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "32dd28_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          },
+          {
+            "id": "32dd28_branch_4",
+            "content": "Attach troubleshooting hooks and error fingerprints"
+          }
+        ],
+        "concepts": [
+          "mindmap",
+          "intent parsing",
+          "payload synthesis"
+        ],
+        "entropy_score": 0.321,
+        "signal_grade": "Low",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_a8a78e_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_a8a78e",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "original": {
+        "branches": [
+          {
+            "id": "233b3e_branch_1",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "233b3e_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "233b3e_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          },
+          {
+            "id": "233b3e_branch_4",
+            "content": "Attach troubleshooting hooks and error fingerprints"
+          }
+        ],
+        "concepts": [
+          "mindmap",
+          "intent parsing",
+          "payload synthesis"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "233b3e_branch_1",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "233b3e_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "233b3e_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          },
+          {
+            "id": "233b3e_branch_4",
+            "content": "Attach troubleshooting hooks and error fingerprints"
+          }
+        ],
+        "concepts": [
+          "mindmap",
+          "intent parsing",
+          "payload synthesis"
+        ],
+        "entropy_score": 0.321,
+        "signal_grade": "Low",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "MintNFTAgent.ts",
+      "status": "skipped",
+      "reason": "no_scaffold_output_found"
+    },
+    {
+      "file": "my_awesome_mindmap_273532_Agent.ts",
+      "runtime_id": "my_awesome_mindmap_273532",
+      "title": "My Awesome Mindmap",
+      "original": {
+        "branches": [
+          {
+            "id": "my_awesome_mindmap_273532_branch_1",
+            "content": "Branch 1"
+          },
+          {
+            "id": "my_awesome_mindmap_273532_branch_2",
+            "content": "Branch 2"
+          },
+          {
+            "id": "my_awesome_mindmap_273532_branch_3",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          }
+        ],
+        "concepts": [
+          "mindmap"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "my_awesome_mindmap_273532_branch_3",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "my_awesome_mindmap_273532_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "my_awesome_mindmap_273532_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          }
+        ],
+        "concepts": [
+          "mindmap"
+        ],
+        "entropy_score": 0.274,
+        "signal_grade": "Low",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "my_awesome_mindmap_87b7eb_Agent.ts",
+      "runtime_id": "my_awesome_mindmap_87b7eb",
+      "title": "My Awesome Mindmap",
+      "original": {
+        "branches": [
+          {
+            "id": "my_awesome_mindmap_87b7eb_branch_1",
+            "content": "Branch 1"
+          },
+          {
+            "id": "my_awesome_mindmap_87b7eb_branch_2",
+            "content": "Branch 2"
+          },
+          {
+            "id": "my_awesome_mindmap_87b7eb_branch_3",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          }
+        ],
+        "concepts": [
+          "mindmap"
+        ]
+      },
+      "refactored": {
+        "branches": [
+          {
+            "id": "my_awesome_mindmap_87b7eb_branch_3",
+            "content": "Detect structure type (hierarchical, workflow, relationships)"
+          },
+          {
+            "id": "my_awesome_mindmap_87b7eb_branch_2",
+            "content": "Extract domain concepts from intent string"
+          },
+          {
+            "id": "my_awesome_mindmap_87b7eb_branch_3",
+            "content": "Generate payload with contextual depth and scope"
+          }
+        ],
+        "concepts": [
+          "mindmap"
+        ],
+        "entropy_score": 0.274,
+        "signal_grade": "Low",
+        "payload_logic": []
+      },
+      "entropy_delta": null,
+      "actions": [
+        "retain_in_quarantine"
+      ],
+      "status": "quarantined"
+    },
+    {
+      "file": "SmartContractAgent.ts",
+      "status": "skipped",
+      "reason": "no_scaffold_output_found"
+    }
+  ]
+}

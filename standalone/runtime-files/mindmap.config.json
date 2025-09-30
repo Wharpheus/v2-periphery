@@ -1,0 +1,25 @@
+{
+  "mindmaps": {
+    "source": "standalone/mindmap_runtimes",
+    "agentBlueprints": true,
+    "scrollGeneration": true,
+    "runtimeTriggering": true,
+    "mutationLedgerMapping": true,
+    "visualInfrastructure": true,
+    "contestAdvantage": true
+  },
+  "features": {
+    "Agent Scaffolding": "Mindmaps spawn agents with domain-specific logic",
+    "Scroll Fusion": "Mindmaps generate scrolls with vault triggers and LP flags",
+    "Runtime Dispatch": "Mindmaps queue Flowomatic jobs based on visual flow",
+    "Mutation Ledger Sync": "Mindmap nodes log as sovereign milestones",
+    "Contributor Onboarding": "Mindmap paths define tiered access and mint eligibility",
+    "Audit Rituals": "Mindmaps trigger SmartContractAuditor scans and fix suggestions"
+  },
+  "dashboard": {
+    "renderMindmapNodes": true,
+    "highlightAgentOrigins": true,
+    "traceScrollLineage": true,
+    "visualizeMutationEvents": true
+  }
+}

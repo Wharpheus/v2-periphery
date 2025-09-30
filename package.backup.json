@@ -1,0 +1,59 @@
+{
+	"name": "@uniswap/v2-periphery",
+	"version": "1.1.0-beta.0",
+	"description": "🎚 Peripheral smart contracts for interacting with Uniswap V2",
+	"engines": {
+		"node": ">=18"
+	},
+	"homepage": "https://uniswap.org",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Uniswap/uniswap-v2-periphery"
+	},
+	"files": [
+		"build",
+		"contracts"
+	],
+	"dependencies": {
+		"@ensdomains/ens-contracts": "^1.6.0",
+		"@trufflesuite/bigint-buffer": "^1.1.10",
+		"@uniswap/lib": "4.0.1-alpha",
+		"@uniswap/v2-core": "1.0.0",
+		"leveldown": "^6.1.1",
+		"secp256k1": "^5.0.1"
+	},
+	"devDependencies": {
+		"@ethereumjs/util": "^9.1.0",
+		"@openzeppelin/contracts": "^5.0.2",
+		"@types/chai": "^4.3.0",
+		"@types/mocha": "^10.0.7",
+		"@types/node": "^22.7.4",
+		"chai": "^4.5.0",
+		"ethereum-waffle": "^4.0.10",
+		"ethers": "^5.7.2",
+		"mocha": "^10.7.3",
+		"ncp": "^2.0.0",
+		"prettier": "^3.3.3",
+		"rimraf": "^6.0.1",
+		"solhint": "^5.0.3",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.3"
+	},
+	"scripts": {
+		"lint": "yarn prettier ./test/*.ts --check",
+		"lint:fix": "yarn prettier ./test/*.ts --write",
+		"lint:sol": "solhint 'contracts/**/*.sol' 'agents/**/*.sol'",
+		"lint:all": "yarn lint && yarn lint:sol",
+		"clean": "rimraf ./build/ && forge clean",
+		"copy-v1-artifacts": "ncp ./buildV1 ./build",
+		"build": "forge build",
+		"compile": "yarn build",
+		"postcompile": "yarn copy-v1-artifacts",
+		"pretest": "yarn compile",
+		"test": "mocha",
+		"test:forge": "forge test",
+		"test:snapshot": "forge snapshot",
+		"prepublishOnly": "yarn test"
+	},
+	"license": "GPL-3.0-or-later"
+}

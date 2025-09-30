@@ -1,0 +1,30 @@
+[
+  {
+    "runtime_id": "main_topic_3fcad9",
+    "title": "Main Topic",
+    "source": "1000004642.txt",
+    "timestamp": "2025-08-29T22:19:12.726Z",
+    "branches": [
+      {
+        "id": "main_topic_3fcad9_branch_1",
+        "content": "Subtopic 1"
+      },
+      {
+        "id": "main_topic_3fcad9_branch_2",
+        "content": "Detail 1"
+      },
+      {
+        "id": "main_topic_3fcad9_branch_3",
+        "content": "Detail 2"
+      },
+      {
+        "id": "main_topic_3fcad9_branch_4",
+        "content": "Subtopic 2"
+      },
+      {
+        "id": "main_topic_3fcad9_branch_5",
+        "content": "Detail 3"
+      }
+    ]
+  }
+]

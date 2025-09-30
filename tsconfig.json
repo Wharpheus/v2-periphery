@@ -1,9 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
+  "target": "es2017",
     "module": "commonjs",
+    "lib": ["es2017", "dom"],
+    "types": ["node", "mocha"],
     "strict": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+  "forceConsistentCasingInFileNames": true,
+  "noImplicitAny": false,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo"
   }
 }

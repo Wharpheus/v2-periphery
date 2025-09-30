@@ -1,0 +1,654 @@
+{
+  "generated_at": "2025-08-29T22:25:43.930Z",
+  "agents": [
+    {
+      "file": "agent_scaffolding_blueprint_3856f6_Agent.ts",
+      "runtime_id": "agent_scaffolding_blueprint_3856f6",
+      "title": "Agent Scaffolding Blueprint",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "sample.json",
+      "branch_count": 5,
+      "concepts": [
+        "agent scaffolding",
+        "executor pattern",
+        "payload contract"
+      ],
+      "entropy_score": 0.624,
+      "signal_grade": "Medium",
+      "agent_role": "scaffolder",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/sample.restored.json",
+        "mindmap": "sample.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "agent_scaffolding_blueprint_50bf46_Agent.ts",
+      "runtime_id": null,
+      "title": "Agent Scaffolding Blueprint 50bf46 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "scaffolder",
+      "payload_logic": {
+        "keys": [
+          "metrics",
+          "fixCandidate",
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "another_node_2c5511_Agent.ts",
+      "runtime_id": null,
+      "title": "Another Node 2c5511 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": [
+          "cwd",
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "another_node_7c5c55_Agent.ts",
+      "runtime_id": "another_node_7c5c55",
+      "title": "Another Node",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "sample.txt",
+      "branch_count": 3,
+      "concepts": [
+        "coding-advanced"
+      ],
+      "entropy_score": 0.366,
+      "signal_grade": "Low",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/optimized/sample.json",
+        "mindmap": "sample.txt",
+        "forensic_status": "optimized"
+      }
+    },
+    {
+      "file": "central_concept_078712_Agent.ts",
+      "runtime_id": null,
+      "title": "Central Concept 078712 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": [
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "central_concept_b86906_Agent.ts",
+      "runtime_id": "central_concept_b86906",
+      "title": "Central Concept",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "1000004643.txt",
+      "branch_count": 5,
+      "concepts": [],
+      "entropy_score": 0.017,
+      "signal_grade": "Low",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/1000004643.json",
+        "mindmap": "1000004643.txt",
+        "forensic_status": "original"
+      }
+    },
+    {
+      "file": "code_documentation_generation_protocol_368bc5_Agent.ts",
+      "runtime_id": null,
+      "title": "Code Documentation Generation Protocol 368bc5 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "docgen",
+      "payload_logic": {
+        "keys": [
+          "code",
+          "source",
+          "fingerprint"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "code_documentation_generation_protocol_6b5b5f_Agent.ts",
+      "runtime_id": "code_documentation_generation_protocol_6b5b5f",
+      "title": "Code Documentation Generation Protocol",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "sample.json",
+      "branch_count": 5,
+      "concepts": [
+        "documentation",
+        "markdown",
+        "code intent"
+      ],
+      "entropy_score": 0.535,
+      "signal_grade": "Medium",
+      "agent_role": "docgen",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-24T06-21-49-972Z.json",
+        "mindmap": "sample.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "diagnostics_health_checks_7f2479_Agent.ts",
+      "runtime_id": null,
+      "title": "Diagnostics Health Checks 7f2479 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "validator",
+      "payload_logic": {
+        "keys": [
+          "target",
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "elite_runtime_coding_agent_A1.ts",
+      "runtime_id": null,
+      "title": "Elite Runtime Coding Agent A1",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "error_handling_saga_recovery_8401b7_Agent.ts",
+      "runtime_id": null,
+      "title": "Error Handling Saga Recovery 8401b7 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": [
+          "operation",
+          "timeout",
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "evolving_autoscaler_tuning_020f1c_Agent.ts",
+      "runtime_id": null,
+      "title": "Evolving Autoscaler Tuning 020f1c Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": [
+          "liveSignals",
+          "priors",
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "integration_api_contract_validation_50c652_Agent.ts",
+      "runtime_id": null,
+      "title": "Integration Api Contract Validation 50c652 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "validator",
+      "payload_logic": {
+        "keys": [
+          "downstreamErrors",
+          "contract",
+          "payload",
+          "config",
+          "path",
+          "endpoint",
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "landing_page_generation_workflow_24aea5_Agent.ts",
+      "runtime_id": "landing_page_generation_workflow_24aea5",
+      "title": "Landing Page Generation Workflow",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "1000004643.json",
+      "branch_count": 4,
+      "concepts": [
+        "html generation",
+        "metadata",
+        "preview"
+      ],
+      "entropy_score": 0.612,
+      "signal_grade": "Medium",
+      "agent_role": "generator",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-29T22-19-13-565Z.json",
+        "mindmap": "1000004643.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "landing_page_generation_workflow_5d6af9_Agent.ts",
+      "runtime_id": null,
+      "title": "Landing Page Generation Workflow 5d6af9 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "generator",
+      "payload_logic": {
+        "keys": [
+          "metadata"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_2eb6ad_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_2eb6ad",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "sample.json",
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "entropy_score": 0.321,
+      "signal_grade": "Low",
+      "agent_role": "parser",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-29T22-16-15-746Z.json",
+        "mindmap": "sample.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_4ab144_Agent.ts",
+      "runtime_id": null,
+      "title": "Mindmap Intent Parsing Enhancement 4ab144 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "parser",
+      "payload_logic": {
+        "keys": [
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_774a08_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_774a08",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "sample.json",
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "entropy_score": 0.321,
+      "signal_grade": "Low",
+      "agent_role": "parser",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-24T06-21-49-972Z.json",
+        "mindmap": "sample.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "mindmap_intent_parsing_enhancement_9719a2_Agent.ts",
+      "runtime_id": "mindmap_intent_parsing_enhancement_9719a2",
+      "title": "Mindmap Intent Parsing Enhancement",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "1000004642.json",
+      "branch_count": 4,
+      "concepts": [
+        "mindmap",
+        "intent parsing",
+        "payload synthesis"
+      ],
+      "entropy_score": 0.321,
+      "signal_grade": "Low",
+      "agent_role": "parser",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-29T22-19-13-565Z.json",
+        "mindmap": "1000004642.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "my_awesome_mindmap_02d637_Agent.ts",
+      "runtime_id": null,
+      "title": "My Awesome Mindmap 02d637 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "parser",
+      "payload_logic": {
+        "keys": [
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "my_awesome_mindmap_082e2b_Agent.ts",
+      "runtime_id": "my_awesome_mindmap_082e2b",
+      "title": "My Awesome Mindmap",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "sample.txt",
+      "branch_count": 3,
+      "concepts": [
+        "mindmap"
+      ],
+      "entropy_score": 0.358,
+      "signal_grade": "Low",
+      "agent_role": "parser",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/optimized/sample.json",
+        "mindmap": "sample.txt",
+        "forensic_status": "optimized"
+      }
+    },
+    {
+      "file": "nft_minting_transaction_flow_60471c_Agent.ts",
+      "runtime_id": "nft_minting_transaction_flow_60471c",
+      "title": "NFT Minting Transaction Flow",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "1000004643.json",
+      "branch_count": 4,
+      "concepts": [
+        "nft",
+        "mint",
+        "transaction"
+      ],
+      "entropy_score": 0.619,
+      "signal_grade": "Medium",
+      "agent_role": "minter",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-29T22-16-15-746Z.json",
+        "mindmap": "1000004643.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "nft_minting_transaction_flow_7ae0e9_Agent.ts",
+      "runtime_id": null,
+      "title": "Nft Minting Transaction Flow 7ae0e9 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "minter",
+      "payload_logic": {
+        "keys": [
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "nft_minting_transaction_flow_825508_Agent.ts",
+      "runtime_id": "nft_minting_transaction_flow_825508",
+      "title": "NFT Minting Transaction Flow",
+      "timestamp": "2025-08-29T22-21-04-016Z",
+      "source": "1000004642.json",
+      "branch_count": 4,
+      "concepts": [
+        "nft",
+        "mint",
+        "transaction"
+      ],
+      "entropy_score": 0.619,
+      "signal_grade": "Medium",
+      "agent_role": "minter",
+      "payload_logic": {
+        "keys": []
+      },
+      "lineage": {
+        "runtime": "C:/Users/Lindsay/Source/Repos/clinemap-main/standalone/mindmap_runtimes/forensic/restored_aggregate_2025-08-24T06-21-49-972Z.json",
+        "mindmap": "1000004642.json",
+        "forensic_status": "refactored"
+      }
+    },
+    {
+      "file": "optimization_hotspot_optimization_19038f_Agent.ts",
+      "runtime_id": null,
+      "title": "Optimization Hotspot Optimization 19038f Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": [
+          "source",
+          "config"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "smart_contract_deployment_pipeline_6b5413_Agent.ts",
+      "runtime_id": null,
+      "title": "Smart Contract Deployment Pipeline 6b5413 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "deployer",
+      "payload_logic": {
+        "keys": [
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "troubleshooting_latency_spike_9c1ecf_Agent.ts",
+      "runtime_id": null,
+      "title": "Troubleshooting Latency Spike 9c1ecf Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": [
+          "metrics",
+          "fixCandidate",
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    },
+    {
+      "file": "troubleshooting_service_outage_bad096_Agent.ts",
+      "runtime_id": null,
+      "title": "Troubleshooting Service Outage Bad096 Agent",
+      "timestamp": null,
+      "source": null,
+      "branch_count": null,
+      "concepts": [],
+      "entropy_score": null,
+      "signal_grade": "Unknown",
+      "agent_role": "generic",
+      "payload_logic": {
+        "keys": [
+          "metrics",
+          "fixCandidate",
+          "source"
+        ]
+      },
+      "lineage": {
+        "runtime": null,
+        "mindmap": null,
+        "forensic_status": null
+      }
+    }
+  ]
+}

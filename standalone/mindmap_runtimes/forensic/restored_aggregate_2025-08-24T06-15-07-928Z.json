@@ -1,0 +1,59 @@
+import SmartPayloadBuilder from '../utils';
+import { AgentExecutor } from '../types';
+import {
+  parseRestoredAggregate,
+  validateAgentLineage,
+  emitScrollFingerprint,
+  registerForensicAgent,
+  narrateRestoration
+} from '../lib/forensicRegistry'; // hypothetical modules
+
+const restored_aggregate_activation_928Z_Agent: AgentExecutor = {
+  execute: async (payload) => {
+    try {
+      const aggregate = await parseRestoredAggregate(payload.source || 'restored_aggregate_2025-08-24T06-15-07-928Z.json');
+
+      const enrichedAgents = await Promise.all(
+        aggregate.map(async (agent) => {
+          const lineageValid = await validateAgentLineage(agent);
+          const fingerprint = await emitScrollFingerprint(agent);
+          const registration = await registerForensicAgent(agent, fingerprint);
+          const narration = await narrateRestoration(agent, fingerprint);
+
+          return {
+            runtime_id: agent.runtime_id,
+            title: agent.title,
+            lineage_valid: lineageValid,
+            fingerprint,
+            registration_status: registration.status,
+            narration_summary: narration
+          };
+        })
+      );
+
+      const output = {
+        runtime_id: "restored_aggregate_activation_928Z",
+        title: "Restored Aggregate Activation",
+        timestamp: new Date().toISOString(),
+        source: payload.source || "restored_aggregate_2025-08-24T06-15-07-928Z.json",
+        branches: enrichedAgents.map((agent) => ({
+          id: `branch_${agent.runtime_id}`,
+          content: `Agent ${agent.title} activated. Fingerprint: ${agent.fingerprint}. Registration: ${agent.registration_status}.`
+        })),
+        concepts: [
+          "forensic restoration",
+          "agent resurrection",
+          "scroll lineage",
+          "runtime certification",
+          "mutation registry"
+        ]
+      };
+
+      return SmartPayloadBuilder.success('Restored aggregate activated and agents registered', output);
+    } catch (error) {
+      return SmartPayloadBuilder.error('restored_aggregate_activation_928Z_Agent Error', error.message);
+    }
+  }
+};
+
+export default restored_aggregate_activation_928Z_Agent;

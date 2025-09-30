@@ -1,0 +1,77 @@
+[
+  {
+    "file": "1000004642.json",
+    "patterns": [
+      "invalid_or_missing_runtime_id",
+      "missing_or_mismatched_source",
+      "generic_or_suffixed_title",
+      "low_entropy_branches"
+    ],
+    "suspectedAgent": "Cline",
+    "status": "Refactored",
+    "nodeFindings": [
+      {
+        "index": 0,
+        "reasons": [
+          "invalid_or_missing_runtime_id",
+          "missing_or_mismatched_source",
+          "generic_or_suffixed_title",
+          "low_entropy_branches"
+        ]
+      }
+    ],
+    "quarantine": "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\mindmap_runtimes\\quarantine\\1000004642.json.2025-08-24T06-32-56-310Z.bak.json",
+    "restoredPath": "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\mindmap_runtimes\\forensic\\1000004642.restored.json"
+  },
+  {
+    "file": "1000004643.json",
+    "patterns": [
+      "invalid_or_missing_runtime_id",
+      "missing_or_mismatched_source",
+      "generic_or_suffixed_title",
+      "low_entropy_branches"
+    ],
+    "suspectedAgent": "Cline",
+    "status": "Refactored",
+    "nodeFindings": [
+      {
+        "index": 0,
+        "reasons": [
+          "invalid_or_missing_runtime_id",
+          "missing_or_mismatched_source",
+          "generic_or_suffixed_title",
+          "low_entropy_branches"
+        ]
+      }
+    ],
+    "quarantine": "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\mindmap_runtimes\\quarantine\\1000004643.json.2025-08-24T06-32-56-310Z.bak.json",
+    "restoredPath": "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\mindmap_runtimes\\forensic\\1000004643.restored.json"
+  },
+  {
+    "file": "sample.json",
+    "patterns": [
+      "missing_or_mismatched_source",
+      "shallow_branches"
+    ],
+    "suspectedAgent": "Unknown",
+    "status": "Refactored",
+    "nodeFindings": [
+      {
+        "index": 0,
+        "reasons": [
+          "missing_or_mismatched_source",
+          "shallow_branches"
+        ]
+      },
+      {
+        "index": 1,
+        "reasons": [
+          "missing_or_mismatched_source",
+          "shallow_branches"
+        ]
+      }
+    ],
+    "quarantine": "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\mindmap_runtimes\\quarantine\\sample.json.2025-08-24T06-32-56-310Z.bak.json",
+    "restoredPath": "C:\\Users\\Lindsay\\Source\\Repos\\clinemap-main\\standalone\\mindmap_runtimes\\forensic\\sample.restored.json"
+  }
+]

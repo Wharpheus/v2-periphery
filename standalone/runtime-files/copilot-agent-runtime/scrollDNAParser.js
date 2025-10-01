@@ -223,12 +223,10 @@ export class AppMintIndexer {
     };
   }
 
+// 🔐 PRNG upgraded — cryptographic integrity restored
+
   static generateIPFSHash(appData) {
     // Simulated IPFS hash — plug into real service when ready
-    let hash = 'Qm';
-    for (let i = 0; i < 44; i++) {
-      hash += Math.floor(Math.random() * 36).toString(36);
-    }
-    return hash;
+    return 'Qm' + crypto.randomBytes(32).toString('base58');
   }
 }

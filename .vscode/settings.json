@@ -1,3 +1,10 @@
 {
-    "auto-dependency-installer.installAutomatically": true
+    "auto-dependency-installer.installAutomatically": true,
+    "terminal.integrated.profiles.windows": {
+        "GitBash": {
+            "path": ["C:\\Program Files\\Git\\bin\\bash.exe"],
+            "args": []
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "GitBash"
 }

@@ -5,6 +5,7 @@ import ValidationResults from './components/ValidationResults';
 import BuildMonitor from './components/BuildMonitor';
 import RealTimeStats from './components/RealTimeStats';
 import CreateAgent from './components/CreateAgent';
+import { apiRequest } from './utils/api';
 
 function App() {
   const [dashboardData, setDashboardData] = useState(null);
@@ -34,11 +35,7 @@ function App() {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/dashboard');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
+      const data = await apiRequest('http://localhost:3000/api/dashboard');
       setDashboardData(data);
       setLoading(false);
       setError(null);

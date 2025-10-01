@@ -1,13 +1,14 @@
 import React from 'react';
 import { AlertTriangle, CheckCircle, XCircle, BarChart3 } from 'lucide-react';
+import { CARD_CONTAINER, TITLE_BASE, EMPTY_STATE, EMPTY_ICON } from '../constants/styles';
 
 const ValidationResults = ({ validationData }) => {
   if (!validationData) {
     return (
-      <div className="bg-gray-800 rounded-lg border border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-4">Validation Results</h2>
-        <div className="text-center text-gray-400 py-8">
-          <BarChart3 className="h-12 w-12 mx-auto mb-4 opacity-50" />
+      <div className={CARD_CONTAINER}>
+        <h2 className={TITLE_BASE}>Validation Results</h2>
+        <div className={EMPTY_STATE}>
+          <BarChart3 className={EMPTY_ICON} />
           <p>No validation data available.</p>
         </div>
       </div>

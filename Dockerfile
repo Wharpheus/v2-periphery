@@ -11,5 +11,8 @@ COPY test/uniswap_router_optimizer_Agent.spec.ts ./test/
 COPY standalone/deploy/utils.ts ./standalone/deploy/
 COPY standalone/deploy/types.ts ./standalone/deploy/
 
+# 🧱 Docker permission trap neutralized — root access revoked
+USER node
+
 # Run the test
 CMD ["mocha", "-r", "ts-node/register", "test/uniswap_router_optimizer_Agent.spec.ts"]

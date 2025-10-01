@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Wand2, Loader2, CheckCircle, AlertTriangle } from 'lucide-react';
+import { apiPost } from '../utils/api';
 
 const CreateAgent = ({ onAgentCreated }) => {
   const [isGenerating, setIsGenerating] = useState(false);
@@ -12,14 +13,7 @@ const CreateAgent = ({ onAgentCreated }) => {
 
     try {
       // Call enhanced agent generator
-      const response = await fetch(`http://localhost:3000/api/generate-enhanced-agents?count=${targetCount}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
-
-      const result = await response.json();
+      const result = await apiPost(`http://localhost:3000/api/generate-enhanced-agents?count=${targetCount}`);
 
       if (result.success) {
         setGenerationResult({

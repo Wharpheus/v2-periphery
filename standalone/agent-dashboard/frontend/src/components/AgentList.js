@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check, X, AlertTriangle, Info } from 'lucide-react';
+import { CARD_CONTAINER, TITLE_BASE, EMPTY_STATE, EMPTY_ICON } from '../constants/styles';
 
 const AgentList = ({ agents, runtimeAgents }) => {
   const getRuntimeAgentStatus = (runtimeId) => {
@@ -28,8 +29,8 @@ const AgentList = ({ agents, runtimeAgents }) => {
   };
 
   return (
-    <div className="bg-gray-800 rounded-lg border border-gray-700 p-6">
-      <h2 className="text-xl font-bold mb-4">Agent Registry</h2>
+    <div className={CARD_CONTAINER}>
+      <h2 className={TITLE_BASE}>Agent Registry</h2>
 
       <div className="space-y-4 max-h-96 overflow-y-auto">
         {agents.map((agent, index) => (
@@ -107,8 +108,8 @@ const AgentList = ({ agents, runtimeAgents }) => {
       </div>
 
       {agents.length === 0 && (
-        <div className="text-center text-gray-400 py-8">
-          <Info className="h-12 w-12 mx-auto mb-4 opacity-50" />
+        <div className={EMPTY_STATE}>
+          <Info className={EMPTY_ICON} />
           <p>No agents registered yet.</p>
         </div>
       )}

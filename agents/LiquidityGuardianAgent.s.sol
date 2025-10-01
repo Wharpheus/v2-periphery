@@ -2,20 +2,22 @@
 pragma solidity ^0.8.28;
 
 import "forge-std/Script.sol";
+import "./BaseAgent.s.sol";
 
 /// @title LiquidityGuardianAgentScript
 /// @author Steven Dauplaise
 /// @notice See contract details below
-contract LiquidityGuardianAgentScript is Script {
+contract LiquidityGuardianAgentScript is BaseAgentScript {
     /// @notice See function details
 function run() external {
+        // 🧾 Scroll-purified by Grok — Duplicated block refactored
         // Deploy or configure Liquidity Guardian Agent
-        console.log("LiquidityGuardianAgent activated: Monitoring LP depth");
+        logActivation("LiquidityGuardianAgent", "activated: Monitoring LP depth");
 
         // Logic to monitor LP depth and trigger rebalance if below threshold
         // This would integrate with the router and check proportions
 
-        vm.stopBroadcast();
+        teardown();
     }
 
     /// @notice See function details

@@ -1,38 +1,128 @@
-name: CI
+name: Optimized CI/CD Pipeline
 
 on:
   push:
     branches:
       - master
+      - main
   pull_request:
+    branches:
+      - master
+      - main
+
+env:
+  FOUNDRY_PROFILE: ci
 
 jobs:
-  test:
+  # Foundry and Smart Contract Tests
+  foundry:
+    name: Foundry Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Foundry
+        run: |
+          curl -L https://foundry.paradigm.xyz | bash
+          echo "$HOME/.foundry/bin" >> $GITHUB_PATH
+
+      - name: Run Foundry fmt
+        run: forge fmt --check
+        continue-on-error: true
+
+      - name: Run Solhint
+        run: yarn lint:sol
+        continue-on-error: true
+
+      - name: Build contracts (CI profile)
+        run: forge build --build-info
+
+      - name: Run tests
+        run: forge test --gas-report
+
+      - name: Run fuzz tests
+        run: forge test --fuzz-runs 1000
+        continue-on-error: true
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3.1.4
+        with:
+          files: ./lcov.info
+          fail_ci_if_error: false
+
+  # Node.js and TypeScript Tests
+  nodejs:
+    name: Node.js Tests
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['10.x', '12.x']
-        os: [ubuntu-latest]
-
-    runs-on: ${{ matrix.os }}
+        node-version: [18, 20]
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Checkout code
+        uses: actions/checkout@v3.5.3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3.8.1
         with:
-          node-version: ${{ matrix.node }}
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
 
-      - run: npm install -g yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-      - id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v1
+      - name: Run linting
+        run: yarn lint:all
+
+      - name: Run TypeScript tests
+        run: yarn test
+
+      - name: Build size analysis
+        run: yarn build:size
+        continue-on-error: true
+
+      - name: Security audit
+        run: yarn security:audit
+        continue-on-error: true
+
+  # Multi-chain deployment check
+  deploy-check:
+    name: Deployment Check
+    runs-on: ubuntu-latest
+    needs: [foundry, nodejs]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.3
+
+      - name: Install Foundry
+        run: |
+          curl -L https://foundry.paradigm.xyz | bash
+          echo "$HOME/.foundry/bin" >> $GITHUB_PATH
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3.8.1
         with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ matrix.os }}-yarn-
+          node-version: 20
+          cache: 'yarn'
 
-      - run: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-      - run: yarn lint
-      - run: yarn test
+      - name: Build for production
+        run: yarn build:production
+        env:
+          RPC_URL: ${{ secrets.RPC_URL }}
+          # Ensure DEPLOYER_PRIVATE_KEY is set in repository secrets
+          DEPLOYER_PRIVATE_KEY: ${{ secrets.DEPLOYER_PRIVATE_KEY || '' }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          name: build-artifacts
+          path: |
+            out/
+            build/
+          retention-days: 30

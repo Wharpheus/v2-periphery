@@ -23,14 +23,14 @@ async function main() {
   const deployed: Record<string, { address: string; abi: any }> = {};
 
   const files = await fs.readdir(OUT_DIR);
-  for (const file of files) {
-    if (!file.endsWith(".json")) continue;
+  const deploymentPromises = files.map(async (file) => {
+    if (!file.endsWith(".json")) return;
     const artifactPath = path.join(OUT_DIR, file);
     const artifact = await fs.readJson(artifactPath);
     const contractName = artifact.contractName || file.replace(/\.json$/, "");
     const abi = artifact.abi;
     const bytecode = artifact.bytecode?.object || artifact.bytecode;
-    if (!abi || !bytecode || bytecode === "0x" || bytecode.length < 4) continue;
+    if (!abi || !bytecode || bytecode === "0x" || bytecode.length < 4) return;
     console.log(`Deploying ${contractName}...`);
     try {
       const factory = new ethers.ContractFactory(abi, bytecode, wallet);
@@ -42,7 +42,9 @@ async function main() {
     } catch (e) {
       console.error(`  Failed to deploy ${contractName}:`, e);
     }
-  }
+  });
+
+  await Promise.all(deploymentPromises);
   const outPath = path.join(DEPLOYMENTS_DIR, `deployments_${Date.now()}.json`);
   await fs.writeJson(outPath, deployed, { spaces: 2 });
   console.log(`\nAll deployments saved to ${outPath}`);

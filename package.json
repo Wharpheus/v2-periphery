@@ -3,7 +3,8 @@
 	"version": "1.1.0-beta.0",
 	"description": "🎚 Peripheral smart contracts for interacting with Uniswap V2",
 	"engines": {
-		"node": ">=18"
+		"node": ">=18",
+		"npm": ">=8.0.0"
 	},
 	"homepage": "https://uniswap.org",
 	"repository": {
@@ -19,6 +20,8 @@
 		"@trufflesuite/bigint-buffer": "^1.1.10",
 		"@uniswap/lib": "4.0.1-alpha",
 		"@uniswap/v2-core": "1.0.1",
+		"classic-level": "^3.0.0",
+		"dotenv": "^17.2.3",
 		"leveldown": "^6.1.1",
 		"secp256k1": "^5.0.1"
 	},
@@ -28,33 +31,37 @@
 		"@types/chai": "^5.2.2",
 		"@types/fs-extra": "^11.0.4",
 		"@types/mocha": "^10.0.10",
-		"@types/node": "^24.6.0",
+		"@types/node": "^24.6.2",
 		"chai": "^6.2.0",
 		"ethereum-waffle": "^4.0.10",
 		"ethers": "^6.15.0",
 		"fs-extra": "^11.3.2",
-		"mocha": "^11.7.2",
+		"mocha": "^11.7.4",
 		"ncp": "^2.0.0",
 		"prettier": "^3.6.2",
 		"rimraf": "^6.0.1",
-		"slither": "^0.10.0",
+		"slither": "^0.2.2",
 		"solhint": "^6.0.1",
 		"ts-mocha": "^11.1.0",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.9.2"
+		"typescript": "^5.9.3"
 	},
 	"scripts": {
 		"lint": "yarn prettier ./test/*.ts --check",
 		"lint:fix": "yarn prettier ./test/*.ts --write",
 		"lint:sol": "solhint 'contracts/**/*.sol' 'agents/**/*.sol'",
 		"lint:all": "yarn lint && yarn lint:sol",
-		"clean": "rimraf ./build/ && forge clean",
+		"clean": "rimraf ./build/ ./out/ ./cache/ && forge clean",
 		"copy-v1-artifacts": "ncp ./buildV1 ./build",
 		"build": "forge build",
+		"build:fast": "forge build --skip test script",
 		"build:optimized": "forge build --profile optimized",
 		"build:production": "forge build --profile production",
 		"build:security": "forge build --profile security",
+		"build:ci": "forge build --build-info --skip test script",
+		"build:size": "forge build --sizes --skip test script",
 		"compile": "yarn build",
+		"compile:fast": "yarn build:fast",
 		"compile:optimized": "yarn build:optimized",
 		"compile:production": "yarn build:production",
 		"compile:security": "yarn build:security",
@@ -66,11 +73,17 @@
 		"test:security": "forge test --profile security",
 		"test:fuzz": "forge test --fuzz-runs 10000",
 		"test:coverage": "forge coverage",
+		"test:parallel": "forge test --gas-report --allow-failure",
 		"security:audit": "slither .",
 		"security:scan": "yarn security:audit && yarn test:security",
 		"deploy:staging": "yarn compile:optimized && ts-node deploy_full_stack.ts",
 		"deploy:production": "yarn compile:production && ts-node deploy_full_stack.ts",
-		"prepublishOnly": "yarn test && yarn security:scan"
+		"prepublishOnly": "yarn test && yarn security:scan",
+		"ci": "yarn lint:all && yarn test && yarn build:ci && yarn security:scan",
+		"analyze": "yarn build:size && yarn test:coverage",
+		"monitor": "node scripts/build-monitor.js",
+		"build:monitor": "yarn build && yarn monitor",
+		"build:analyze": "yarn build:monitor && yarn analyze"
 	},
 	"license": "GPL-3.0-or-later"
 }

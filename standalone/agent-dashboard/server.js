@@ -1,9 +1,10 @@
-const express = require('express');
+npmconst express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
 const path = require('path');
 const WebSocket = require('ws');
 const chokidar = require('chokidar');
+const db = require('./database');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -127,12 +128,29 @@ async function getRuntimeAgents() {
 // API Routes
 app.get('/api/dashboard', async (req, res) => {
   try {
-    const dashboard = await readJsonFile(DASHBOARD_JSON);
-    const logs = await getLatestLogs();
-    const runtimeAgents = await getRuntimeAgents();
+    const agents = db.getAllAgents();
+    const logs = db.getLatestLogs();
+    const runtimeAgents = db.getAllRuntimeAgents();
+    const stats = db.getDashboardStats();
+
+    // Calculate stats from agents
+    const totalAgents = agents.length;
+    const activeAgents = agents.filter(a => a.validationScore?.pass).length;
+    const validationPassRate = totalAgents > 0 ? (activeAgents / totalAgents) * 100 : 0;
+    const avgEntropy = totalAgents > 0 ? agents.reduce((sum, a) => sum + (a.validationScore?.entropy || 0), 0) / totalAgents : 0;
+    const avgScore = totalAgents > 0 ? agents.reduce((sum, a) => sum + (a.validationScore?.score || 0), 0) / totalAgents : 0;
 
     res.json({
-      dashboard,
+      dashboard: {
+        agents,
+        stats: {
+          totalAgents,
+          activeAgents,
+          validationPassRate,
+          avgEntropy,
+          avgScore
+        }
+      },
       logs,
       runtimeAgents,
       timestamp: new Date().toISOString()
@@ -145,27 +163,30 @@ app.get('/api/dashboard', async (req, res) => {
 
 app.get('/api/agents', async (req, res) => {
   try {
-    const dashboard = await readJsonFile(DASHBOARD_JSON);
-    res.json(dashboard?.agents || []);
+    const agents = db.getAllAgents();
+    res.json(agents);
   } catch (error) {
+    console.error('Error loading agents:', error);
     res.status(500).json({ error: 'Failed to load agents' });
   }
 });
 
 app.get('/api/logs', async (req, res) => {
   try {
-    const logs = await getLatestLogs();
+    const logs = db.getLatestLogs();
     res.json(logs);
   } catch (error) {
+    console.error('Error loading logs:', error);
     res.status(500).json({ error: 'Failed to load logs' });
   }
 });
 
 app.get('/api/runtime-agents', async (req, res) => {
   try {
-    const agents = await getRuntimeAgents();
+    const agents = db.getAllRuntimeAgents();
     res.json(agents);
   } catch (error) {
+    console.error('Error loading runtime agents:', error);
     res.status(500).json({ error: 'Failed to load runtime agents' });
   }
 });
@@ -248,46 +269,66 @@ app.post('/api/generate-enhanced-agents', async (req, res) => {
   }
 });
 
-// WebSocket for real-time updates
-const server = app.listen(PORT, () => {
-  console.log(`Agent Dashboard server running on port ${PORT}`);
-});
+// Initialize database and start server
+async function startServer() {
+  try {
+    // Initialize database
+    await db.initialize();
 
-const wss = new WebSocket.Server({ server });
+    // Run migration from file-based storage to database
+    await db.migrateFromFiles();
 
-// Watch for file changes to broadcast updates
-const watcher = chokidar.watch([DASHBOARD_JSON, LOGS_DIR, RUNTIME_AGENTS_DIR], {
-  ignored: /(^|[\/\\])\../, // ignore dotfiles
-  persistent: true,
-  awaitWriteFinish: true
-});
+    // Start the server
+    const server = app.listen(PORT, () => {
+      console.log(`Agent Dashboard server running on port ${PORT}`);
+      console.log(`📊 SQLite database: ${path.join(__dirname, 'agent_dashboard.db')}`);
+    });
 
-watcher.on('change', (filePath) => {
-  console.log(`File ${filePath} has been changed`);
-  // Broadcast update to all connected clients
-  wss.clients.forEach(client => {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(JSON.stringify({
-        type: 'update',
-        file: path.basename(filePath),
-        timestamp: new Date().toISOString()
-      }));
-    }
-  });
-});
+    // WebSocket setup
+    const wss = new WebSocket.Server({ server });
 
-wss.on('connection', (ws) => {
-  console.log('Client connected to dashboard WebSocket');
-  ws.on('message', (message) => {
-    console.log('Received:', message.toString());
-  });
-});
+    // Watch for file changes to broadcast updates
+    const watcher = chokidar.watch([DASHBOARD_JSON, LOGS_DIR, RUNTIME_AGENTS_DIR], {
+      ignored: /(^|[\/\\])\../, // ignore dotfiles
+      persistent: true,
+      awaitWriteFinish: true
+    });
 
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('SIGTERM received, shutting down gracefully');
-  watcher.close();
-  server.close(() => {
-    console.log('Process terminated');
-  });
-});
+    watcher.on('change', (filePath) => {
+      console.log(`File ${filePath} has been changed`);
+      // Broadcast update to all connected clients
+      wss.clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify({
+            type: 'update',
+            file: path.basename(filePath),
+            timestamp: new Date().toISOString()
+          }));
+        }
+      });
+    });
+
+    wss.on('connection', (ws) => {
+      console.log('Client connected to dashboard WebSocket');
+      ws.on('message', (message) => {
+        console.log('Received:', message.toString());
+      });
+    });
+
+    // Graceful shutdown
+    process.on('SIGTERM', () => {
+      console.log('SIGTERM received, shutting down gracefully');
+      watcher.close();
+      db.close();
+      server.close(() => {
+        console.log('Process terminated');
+      });
+    });
+
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+}
+
+startServer();

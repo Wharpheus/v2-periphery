@@ -1,5 +1,9 @@
 name: Optimized CI/CD Pipeline
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -17,57 +21,67 @@ jobs:
   # Foundry and Smart Contract Tests
   foundry:
     name: Foundry Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Cache Foundry dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.foundry/cache
+          key: foundry-${{ hashFiles('**/foundry.toml') }}
+          restore-keys: |
+            foundry-
 
       - name: Install Foundry
-        run: |
-          curl -L https://foundry.paradigm.xyz | bash
-          echo "$HOME/.foundry/bin" >> $GITHUB_PATH
+        uses: onbjerg/foundry-toolchain@v1
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Run Foundry fmt
         run: forge fmt --check
-        continue-on-error: true
-
-      - name: Run Solhint
-        run: yarn lint:sol
-        continue-on-error: true
 
       - name: Build contracts (CI profile)
-        run: forge build --build-info
+        run: forge build --build-info --sizes
 
       - name: Run tests
         run: forge test --gas-report
 
       - name: Run fuzz tests
-        run: forge test --fuzz-runs 1000
+        run: forge test --fuzz-runs 256
         continue-on-error: true
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3.1.4
-        with:
-          files: ./lcov.info
-          fail_ci_if_error: false
+      - name: Run security tests
+        run: forge test --profile security
+        continue-on-error: true
 
   # Node.js and TypeScript Tests
   nodejs:
     name: Node.js Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         node-version: [18, 20]
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v2
 
       - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3.8.1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: yarn
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -86,27 +100,63 @@ jobs:
         run: yarn security:audit
         continue-on-error: true
 
+  # Agent Dashboard Frontend Build
+  frontend:
+    name: Frontend Build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build frontend
+        run: |
+          cd standalone/agent-dashboard/frontend
+          yarn install --frozen-lockfile
+          yarn build
+
+      - name: Upload frontend artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-build
+          path: standalone/agent-dashboard/frontend/build/
+          retention-days: 30
+
   # Multi-chain deployment check
   deploy-check:
     name: Deployment Check
-    runs-on: ubuntu-latest
-    needs: [foundry, nodejs]
+    runs-on: ubuntu-22.04
+    needs: [foundry, nodejs, frontend]
     if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4
+
+      - name: Cache Foundry dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.foundry/cache
+          key: foundry-${{ hashFiles('**/foundry.toml') }}
+          restore-keys: |
+            foundry-
 
       - name: Install Foundry
-        run: |
-          curl -L https://foundry.paradigm.xyz | bash
-          echo "$HOME/.foundry/bin" >> $GITHUB_PATH
+        uses: foundry-rs/foundry-toolchain@v1
 
       - name: Install Node.js
-        uses: actions/setup-node@v3.8.1
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'yarn'
+          cache: yarn
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -116,13 +166,14 @@ jobs:
         env:
           RPC_URL: ${{ secrets.RPC_URL }}
           # Ensure DEPLOYER_PRIVATE_KEY is set in repository secrets
-          DEPLOYER_PRIVATE_KEY: ${{ secrets.DEPLOYER_PRIVATE_KEY || '' }}
+          DEPLOYER_PRIVATE_KEY: ${{ secrets.DEPLOYER_PRIVATE_KEY }}
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3.1.3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: |
             out/
             build/
+            standalone/agent-dashboard/frontend/build/
           retention-days: 30

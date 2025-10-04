@@ -5,13 +5,12 @@ import "@uniswap/lib/contracts/libraries/TransferHelper.sol";
 
 import "./interfaces/IUniswapV2Router02.sol";
 import "./libraries/UniswapV2Library.sol";
-import "./libraries/SafeMath.sol";
 import "./interfaces/IERC20.sol";
 import "./interfaces/IWETH.sol";
 
 /// @title UniswapV2Router02
-/// @author Steven Dauplaise
-/// @notice See contract details below
+/// @author Uniswap Labs
+/// @notice Router for performing swaps, adding and removing liquidity on Uniswap V2 protocol
 contract UniswapV2Router02 is IUniswapV2Router02 {
     /// @inheritdoc IUniswapV2Router01
     function factory() external view override returns (address) {
@@ -22,7 +21,6 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
     function WETH() external view override returns (address) {
         return WETH_;
     }
-    using SafeMath for uint256;
 
     address public immutable FACTORY;
     address public immutable WETH_;
@@ -234,7 +232,7 @@ function removeLiquidityETHWithPermitSupportingFeeOnTransferTokens(
     /// @notice See function details
     function _swap(uint256[] memory amounts, address[] memory path, address _to) internal {
         uint256 len = path.length;
-        for (uint256 i = 0; i < len - 1;) {
+        for (uint256 i; i < len - 1;) {
             (address input, address output) = (path[i], path[i + 1]);
             (address token0,) = UniswapV2Library.sortTokens(input, output);
             uint256 amountOut = amounts[i + 1];
@@ -359,7 +357,8 @@ function swapETHForExactTokens(uint256 amountOut, address[] calldata path, addre
     // requires the initial amount to have already been sent to the first pair
     /// @notice See function details
 function _swapSupportingFeeOnTransferTokens(address[] memory path, address _to) internal virtual {
-        for (uint256 i; i < path.length - 1; i++) {
+        uint256 len = path.length;
+        for (uint256 i; i < len - 1;) {
             (address input, address output) = (path[i], path[i + 1]);
             (address token0,) = UniswapV2Library.sortTokens(input, output);
             IUniswapV2Pair pair = IUniswapV2Pair(UniswapV2Library.pairFor(FACTORY, input, output));
@@ -375,8 +374,9 @@ function _swapSupportingFeeOnTransferTokens(address[] memory path, address _to) 
             }
             (uint256 amount0Out, uint256 amount1Out) =
                 input == token0 ? (uint256(0), amountOutput) : (amountOutput, uint256(0));
-            address to = i < path.length - 2 ? UniswapV2Library.pairFor(FACTORY, output, path[i + 2]) : _to;
+            address to = i < len - 2 ? UniswapV2Library.pairFor(FACTORY, output, path[i + 2]) : _to;
             pair.swap(amount0Out, amount1Out, to, new bytes(0));
+            unchecked { ++i; }
         }
     }
 

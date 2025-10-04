@@ -1,5 +1,7 @@
 [profile.default]
 src = ["contracts", "lib/v2-core/contracts"]
+out = "out"
+libs = ["lib"]
 remappings = [
   "@uniswap/v2-core/=lib/v2-core/",
   "@uniswap/lib/=lib/lib/",
@@ -13,6 +15,10 @@ optimizer = true
 optimizer_runs = 200
 via_ir = true
 
+# Performance optimizations
+parallel = 16
+fetch_timeout = 60
+
 # Security settings
 deny_warnings = false
 fuzz_runs = 10000
@@ -20,18 +26,46 @@ fuzz_runs = 10000
 # Test settings
 fs_permissions = [{ access = "read", path = "./test/"}]
 
+# Cache settings for faster builds
+cache = true
+cache_path = "cache"
+
+# Build info for better debugging
+build_info = false
+
 [profile.optimized]
 inherits = "default"
 optimizer = true
 optimizer_runs = 1000000
 via_ir = true
 
+# Additional optimization for production
+
 [profile.security]
 inherits = "default"
 deny_warnings = true
 fuzz_runs = 50000
 
+# Enable model checker for security builds
+model_checker = { contracts = { "*.*" = ["assert-bounded-loop"] }, show_unproved = true }
+
 [profile.production]
 inherits = "optimized"
 deny_warnings = true
 fuzz_runs = 100000
+
+# Production-specific optimizations
+extra_output = ["storageLayout", "metadata"]
+build_info = true
+
+[profile.fast]
+inherits = "default"
+optimizer = false
+via_ir = false
+build_info = false
+
+[profile.ci]
+inherits = "default"
+build_info = true
+extra_output = ["storageLayout"]
+fuzz_runs = 256

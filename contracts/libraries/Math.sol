@@ -14,7 +14,9 @@ library Math {
             uint x = y / 2 + 1;
             while (x < z) {
                 z = x;
-                x = (y / x + x) / 2;
+                unchecked {
+                    x = (y / x + x) / 2;
+                }
             }
         } else if (y != 0) {
             z = 1;
